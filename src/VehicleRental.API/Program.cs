@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using VehicleRental.Infrastructure.Data;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,6 +30,25 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+//Seed the database
+if (app.Configuration.GetValue<bool>("DatabaseOptions:SeedData"))
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<VehicleRentalDbContext>();
+            await DatabaseSeeder.SeedVehiclesAsync(context);
+            await DatabaseSeeder.SeedTelemetryAsync(context);
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred while seeding the database.");
+        }
+    }
+}
 
 app.Run();
 

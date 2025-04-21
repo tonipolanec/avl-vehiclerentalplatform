@@ -15,6 +15,7 @@ public class VehicleRentalDbContext : DbContext
     public DbSet<Rental> Rentals { get; set; }
     public DbSet<TelemetryType> TelemetryTypes { get; set; }
     public DbSet<Telemetry> Telemetry { get; set; }
+    public DbSet<AuditLog> AuditLogs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -83,6 +84,16 @@ public class VehicleRentalDbContext : DbContext
             entity.Property(e => e.Unit).HasMaxLength(20);
             entity.Property(e => e.ValidationMin).HasPrecision(10, 2);
             entity.Property(e => e.ValidationMax).HasPrecision(10, 2);
+        });
+
+        modelBuilder.Entity<AuditLog>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.EntityName).HasMaxLength(100).IsRequired();
+            entity.Property(e => e.Action).HasMaxLength(50).IsRequired();
+            entity.Property(e => e.OldValues).HasMaxLength(4000);
+            entity.Property(e => e.NewValues).HasMaxLength(4000);
+            entity.Property(e => e.Timestamp).IsRequired();
         });
     }
 }
