@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tlGIWU2ZYcPD6tUh713dcGIjUu/yvfUgPwNwVA63qZc=",
+  "Source": "VehicleRental.API",
+  "BasePath": "_content/VehicleRental.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
