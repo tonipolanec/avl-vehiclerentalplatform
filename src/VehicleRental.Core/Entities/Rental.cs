@@ -15,12 +15,14 @@ namespace VehicleRental.Core.Entities
         public decimal? FinalOdometerReading { get; set; }
         public decimal? InitialBatteryLevel { get; set; }
         public decimal? FinalBatteryLevel { get; set; }
-        public decimal? TotalCost { get; set; }
+        public decimal TotalCost { get; set; } = 0m;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
         // Navigation properties
         public required Customer Customer { get; set; }
         public required Vehicle Vehicle { get; set; }
+
+        public decimal TotalDistance => FinalOdometerReading - InitialOdometerReading ?? 0m;
     }
 }

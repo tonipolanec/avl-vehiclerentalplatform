@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
-
+using VehicleRental.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +11,27 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Vehicle Rental API",
+        Version = "v1",
+        Description = "API for managing vehicle rentals",
+    });
+});
 
 
 
 // Add DbContext configuration
 builder.Services.AddDbContext<VehicleRentalDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register services
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IVehicleService, VehicleService>();
+builder.Services.AddScoped<IRentalService, RentalService>();
+builder.Services.AddScoped<IPricingCalculator, PricingCalculator>();
 
 var app = builder.Build();
 
