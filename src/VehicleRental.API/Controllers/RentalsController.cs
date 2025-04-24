@@ -6,7 +6,7 @@ namespace VehicleRental.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RentalsController : ControllerBase
+    public class RentalsController : BaseController
     {
         private readonly IRentalService _rentalService;
         private readonly ILogger<RentalsController> _logger;
@@ -25,15 +25,10 @@ namespace VehicleRental.API.Controllers
                 var rental = await _rentalService.CreateRentalAsync(request);
                 return CreatedAtAction(nameof(GetRental), new { id = rental.Id }, rental);
             }
-            catch (InvalidOperationException ex)
-            {
-                _logger.LogWarning(ex, "Failed to create rental");
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating rental");
-                return StatusCode(500, "An error occurred while creating the rental");
+                return HandleError<RentalResponse>(ex, "CreateRental", "RENTAL_CREATION_ERROR");
             }
         }
 
@@ -45,14 +40,10 @@ namespace VehicleRental.API.Controllers
                 var rental = await _rentalService.GetRentalByIdAsync(id);
                 return Ok(rental);
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving rental {RentalId}", id);
-                return StatusCode(500, "An error occurred while retrieving the rental");
+                return HandleError<RentalResponse>(ex, "GetRental", "RENTAL_RETRIEVAL_ERROR");
             }
         }
 
@@ -67,7 +58,7 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving all rentals");
-                return StatusCode(500, "An error occurred while retrieving rentals");
+                return HandleError<IEnumerable<RentalResponse>>(ex, "GetAllRentals", "RENTALS_RETRIEVAL_ERROR");
             }
         }
 
@@ -79,43 +70,25 @@ namespace VehicleRental.API.Controllers
                 var rental = await _rentalService.UpdateRentalAsync(id, request);
                 return Ok(rental);
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (InvalidOperationException ex)
-            {
-                _logger.LogWarning(ex, "Failed to update rental {RentalId}", id);
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error updating rental {RentalId}", id);
-                return StatusCode(500, "An error occurred while updating the rental");
+                return HandleError<RentalResponse>(ex, "UpdateRental", "RENTAL_UPDATE_ERROR");
             }
         }
 
         [HttpPost("{id}/cancel")]
-        public async Task<IActionResult> CancelRental(int id)
+        public async Task<ActionResult> CancelRental(int id)
         {
             try
             {
                 await _rentalService.CancelRentalAsync(id);
                 return NoContent();
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (InvalidOperationException ex)
-            {
-                _logger.LogWarning(ex, "Failed to cancel rental {RentalId}", id);
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error cancelling rental {RentalId}", id);
-                return StatusCode(500, "An error occurred while cancelling the rental");
+                return HandleError(ex, "CancelRental", "RENTAL_CANCELLATION_ERROR");
             }
         }
     }

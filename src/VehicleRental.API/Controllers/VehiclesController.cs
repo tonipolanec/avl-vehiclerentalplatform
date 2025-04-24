@@ -6,7 +6,7 @@ namespace VehicleRental.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class VehiclesController : ControllerBase
+    public class VehiclesController : BaseController
     {
         private readonly IVehicleService _vehicleService;
         private readonly ILogger<VehiclesController> _logger;
@@ -25,14 +25,10 @@ namespace VehicleRental.API.Controllers
                 var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
                 return Ok(vehicle);
             }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving vehicle {VehicleId}", id);
-                return StatusCode(500, "An error occurred while retrieving the vehicle");
+                return HandleError<VehicleResponse>(ex, "GetVehicle", "VEHICLE_RETRIEVAL_ERROR");
             }
         }
 
@@ -47,7 +43,7 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving all vehicles");
-                return StatusCode(500, "An error occurred while retrieving vehicles");
+                return HandleError<IEnumerable<VehicleResponse>>(ex, "GetAllVehicles", "VEHICLES_RETRIEVAL_ERROR");
             }
         }
     }
