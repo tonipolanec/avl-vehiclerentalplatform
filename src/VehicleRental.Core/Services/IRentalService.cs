@@ -5,11 +5,11 @@ namespace VehicleRental.Core.Services
 {
     public interface IRentalService
     {
-        Task<RentalResponse> CreateRentalAsync(RentalRequest request);
-        Task<RentalResponse> GetRentalByIdAsync(int id);
-        Task<IEnumerable<RentalResponse>> GetAllRentalsAsync();
-        Task<RentalResponse> UpdateRentalAsync(int id, RentalRequest request);
-        // Task CompleteRentalAsync(int id, RentalRequest request);
+        Task<RentalAllDetailsResponse> CreateRentalAsync(CreateRentalRequest request);
+        Task<RentalAllDetailsResponse> GetRentalByIdAsync(int id);
+        Task<IEnumerable<RentalBasicDetailsResponse>> GetAllRentalsAsync();
+        Task<RentalAllDetailsResponse> UpdateRentalAsync(int id, UpdateRentalDatesRequest request);
+        Task<RentalAllDetailsResponse> FinishRentalAsync(int id, FinishRentalRequest request);
         Task CancelRentalAsync(int id);
     }
 }

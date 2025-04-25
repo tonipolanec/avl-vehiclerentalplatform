@@ -18,7 +18,7 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<RentalResponse>> CreateRental(RentalRequest request)
+        public async Task<ActionResult<RentalAllDetailsResponse>> CreateRental(CreateRentalRequest request)
         {
             try
             {
@@ -28,12 +28,12 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating rental");
-                return HandleError<RentalResponse>(ex, "CreateRental", "RENTAL_CREATION_ERROR");
+                return HandleError<RentalAllDetailsResponse>(ex, "CreateRental", "RENTAL_CREATION_ERROR");
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<RentalResponse>> GetRental(int id)
+        public async Task<ActionResult<RentalAllDetailsResponse>> GetRental(int id)
         {
             try
             {
@@ -43,12 +43,12 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving rental {RentalId}", id);
-                return HandleError<RentalResponse>(ex, "GetRental", "RENTAL_RETRIEVAL_ERROR");
+                return HandleError<RentalAllDetailsResponse>(ex, "GetRental", "RENTAL_RETRIEVAL_ERROR");
             }
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RentalResponse>>> GetAllRentals()
+        public async Task<ActionResult<IEnumerable<RentalBasicDetailsResponse>>> GetAllRentals()
         {
             try
             {
@@ -58,12 +58,12 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving all rentals");
-                return HandleError<IEnumerable<RentalResponse>>(ex, "GetAllRentals", "RENTALS_RETRIEVAL_ERROR");
+                return HandleError<IEnumerable<RentalBasicDetailsResponse>>(ex, "GetAllRentals", "RENTALS_RETRIEVAL_ERROR");
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<RentalResponse>> UpdateRental(int id, RentalRequest request)
+        public async Task<ActionResult<RentalAllDetailsResponse>> UpdateRental(int id, UpdateRentalDatesRequest request)
         {
             try
             {
@@ -73,11 +73,11 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error updating rental {RentalId}", id);
-                return HandleError<RentalResponse>(ex, "UpdateRental", "RENTAL_UPDATE_ERROR");
+                return HandleError<RentalAllDetailsResponse>(ex, "UpdateRental", "RENTAL_UPDATE_ERROR");
             }
         }
 
-        [HttpPost("{id}/cancel")]
+        [HttpPut("{id}/cancel")]
         public async Task<ActionResult> CancelRental(int id)
         {
             try
@@ -89,6 +89,21 @@ namespace VehicleRental.API.Controllers
             {
                 _logger.LogError(ex, "Error cancelling rental {RentalId}", id);
                 return HandleError(ex, "CancelRental", "RENTAL_CANCELLATION_ERROR");
+            }
+        }
+
+        [HttpPut("{id}/finish")]
+        public async Task<ActionResult<RentalAllDetailsResponse>> FinishRental(int id, FinishRentalRequest request)
+        {
+            try
+            {
+                var rental = await _rentalService.FinishRentalAsync(id, request);
+                return Ok(rental);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error finishing rental {RentalId}", id);
+                return HandleError<RentalAllDetailsResponse>(ex, "FinishRental", "RENTAL_FINISH_ERROR");
             }
         }
     }

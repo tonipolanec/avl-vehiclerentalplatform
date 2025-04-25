@@ -75,6 +75,10 @@ public class VehicleRentalDbContext : DbContext
                   .WithMany(tt => tt.Readings)
                   .HasForeignKey(t => t.TelemetryTypeId)
                   .OnDelete(DeleteBehavior.Restrict);
+
+            entity.HasIndex(t => new { t.VehicleId, t.TelemetryTypeId, t.Timestamp })
+                  .HasFilter("\"IsValid\" = true");
+
         });
 
         modelBuilder.Entity<TelemetryType>(entity =>

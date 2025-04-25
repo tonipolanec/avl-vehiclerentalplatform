@@ -5,10 +5,11 @@ namespace VehicleRental.Core.Services
 {
     public interface ICustomerService
     {
-        Task<CustomerResponse> CreateCustomerAsync(CustomerRequest request);
-        Task<CustomerResponse> UpdateCustomerAsync(int id, CustomerRequest request);
+        Task<CustomerAllDetailsResponse> CreateCustomerAsync(CreateCustomerRequest request);
+        Task<CustomerAllDetailsResponse> UpdateCustomerNameAsync(int id, UpdateCustomerNameRequest request);
+        Task<CustomerAllDetailsResponse> UpdateCustomerStatusAsync(int id, UpdateCustomerStatusRequest request);
         Task DeleteCustomerAsync(int id);
-        Task<IEnumerable<CustomerResponse>> GetAllCustomersAsync();
-        Task<CustomerResponse> GetCustomerByIdAsync(int id);
+        Task<IEnumerable<CustomerBasicDetailsResponse>> GetAllCustomersAsync();
+        Task<CustomerAllDetailsResponse> GetCustomerByIdAsync(int id);
     }
 }

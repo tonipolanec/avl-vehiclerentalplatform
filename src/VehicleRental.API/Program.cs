@@ -4,12 +4,15 @@ using Microsoft.OpenApi.Models;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Services;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.AspNetCore.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -19,6 +22,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1",
         Description = "API for managing vehicle rentals",
     });
+    //c.OrderActionsBy(apiDesc => apiDesc.HttpMethod);
 });
 
 
@@ -32,6 +36,7 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<IPricingCalculator, PricingCalculator>();
+builder.Services.AddScoped<ITelemetryService, TelemetryService>();
 
 var app = builder.Build();
 

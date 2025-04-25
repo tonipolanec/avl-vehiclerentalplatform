@@ -2,12 +2,24 @@ using System.ComponentModel.DataAnnotations;
 
 namespace VehicleRental.Core.DTOs
 {
-    public class CustomerRequest
+    public class CreateCustomerRequest
+    {
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; } = string.Empty;
+    }
+
+    public class UpdateCustomerNameRequest
     {
         [Required]
         [StringLength(100)]
         public string Name { get; set; } = string.Empty;
 
-        public bool? IsActive { get; set; } = true;
+    }
+
+    public class UpdateCustomerStatusRequest
+    {
+        [Required]
+        public bool IsActive { get; set; }
     }
 }

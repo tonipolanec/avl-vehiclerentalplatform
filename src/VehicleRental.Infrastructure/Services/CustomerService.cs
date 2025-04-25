@@ -18,7 +18,7 @@ namespace VehicleRental.Infrastructure.Services
             _logger = logger;
         }
 
-        public async Task<CustomerResponse> CreateCustomerAsync(CustomerRequest request)
+        public async Task<CustomerAllDetailsResponse> CreateCustomerAsync(CreateCustomerRequest request)
         {
             var customer = new Customer
             {
@@ -37,7 +37,7 @@ namespace VehicleRental.Infrastructure.Services
             return await GetCustomerByIdAsync(customer.Id);
         }
 
-        public async Task<CustomerResponse> GetCustomerByIdAsync(int id)
+        public async Task<CustomerAllDetailsResponse> GetCustomerByIdAsync(int id)
         {
             var customer = await _context.Customers
                 .Include(c => c.Rentals)
@@ -48,19 +48,19 @@ namespace VehicleRental.Infrastructure.Services
                 throw new KeyNotFoundException($"Customer with ID {id} not found");
             }
 
-            return CustomerResponse.FromEntity(customer);
+            return CustomerAllDetailsResponse.FromEntity(customer);
         }
 
-        public async Task<IEnumerable<CustomerResponse>> GetAllCustomersAsync()
+        public async Task<IEnumerable<CustomerBasicDetailsResponse>> GetAllCustomersAsync()
         {
             var customers = await _context.Customers
                 .Include(c => c.Rentals)
                 .ToListAsync();
 
-            return customers.Select(CustomerResponse.FromEntity);
+            return customers.Select(CustomerBasicDetailsResponse.FromEntity);
         }
 
-        public async Task<CustomerResponse> UpdateCustomerAsync(int id, CustomerRequest request)
+        public async Task<CustomerAllDetailsResponse> UpdateCustomerNameAsync(int id, UpdateCustomerNameRequest request)
         {
             var customer = await _context.Customers
                 .FirstOrDefaultAsync(c => c.Id == id);
@@ -76,6 +76,26 @@ namespace VehicleRental.Infrastructure.Services
             await _context.SaveChangesAsync();
 
             _logger.LogInformation("Updated customer {CustomerName} with ID {CustomerId}", customer.Name, customer.Id);
+
+            return await GetCustomerByIdAsync(customer.Id);
+        }
+
+        public async Task<CustomerAllDetailsResponse> UpdateCustomerStatusAsync(int id, UpdateCustomerStatusRequest request)
+        {
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (customer == null)
+            {
+                throw new KeyNotFoundException($"Customer with ID {id} not found");
+            }
+
+            customer.IsActive = request.IsActive;
+            customer.UpdatedAt = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Updated customer status for customer {CustomerId} to {IsActive}", id, request.IsActive);
 
             return await GetCustomerByIdAsync(customer.Id);
         }

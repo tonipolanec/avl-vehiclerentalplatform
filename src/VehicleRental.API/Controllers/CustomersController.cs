@@ -18,7 +18,7 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<CustomerResponse>> CreateCustomer(CustomerRequest request)
+        public async Task<ActionResult<CustomerBasicDetailsResponse>> CreateCustomer(CreateCustomerRequest request)
         {
             try
             {
@@ -28,12 +28,12 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating customer");
-                return HandleError<CustomerResponse>(ex, "CreateCustomer", "CUSTOMER_CREATION_ERROR");
+                return HandleError<CustomerBasicDetailsResponse>(ex, "CreateCustomer", "CUSTOMER_CREATION_ERROR");
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CustomerResponse>> GetCustomer(int id)
+        public async Task<ActionResult<CustomerAllDetailsResponse>> GetCustomer(int id)
         {
             try
             {
@@ -43,12 +43,12 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving customer {CustomerId}", id);
-                return HandleError<CustomerResponse>(ex, "GetCustomer", "CUSTOMER_RETRIEVAL_ERROR");
+                return HandleError<CustomerAllDetailsResponse>(ex, "GetCustomer", "CUSTOMER_RETRIEVAL_ERROR");
             }
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CustomerResponse>>> GetAllCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerBasicDetailsResponse>>> GetAllCustomers()
         {
             try
             {
@@ -58,24 +58,40 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving all customers");
-                return HandleError<IEnumerable<CustomerResponse>>(ex, "GetAllCustomers", "CUSTOMERS_RETRIEVAL_ERROR");
+                return HandleError<IEnumerable<CustomerBasicDetailsResponse>>(ex, "GetAllCustomers", "CUSTOMERS_RETRIEVAL_ERROR");
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<CustomerResponse>> UpdateCustomer(int id, CustomerRequest request)
+        public async Task<ActionResult<CustomerBasicDetailsResponse>> UpdateCustomerName(int id, UpdateCustomerNameRequest request)
         {
             try
             {
-                var customer = await _customerService.UpdateCustomerAsync(id, request);
+                var customer = await _customerService.UpdateCustomerNameAsync(id, request);
                 return Ok(customer);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error updating customer {CustomerId}", id);
-                return HandleError<CustomerResponse>(ex, "UpdateCustomer", "CUSTOMER_UPDATE_ERROR");
+                return HandleError<CustomerBasicDetailsResponse>(ex, "UpdateCustomer", "CUSTOMER_UPDATE_ERROR");
             }
         }
+
+        [HttpPut("{id}/status")]
+        public async Task<ActionResult<CustomerBasicDetailsResponse>> UpdateCustomerStatus(int id, [FromBody] UpdateCustomerStatusRequest request)
+        {
+            try
+            {
+                var customer = await _customerService.UpdateCustomerStatusAsync(id, request);
+                return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating customer status for customer {CustomerId}", id);
+                return HandleError<CustomerBasicDetailsResponse>(ex, "UpdateCustomerStatus", "CUSTOMER_STATUS_UPDATE_ERROR");
+            }
+        }
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCustomer(int id)
