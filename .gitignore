@@ -7,3 +7,4 @@ src/VehicleRental.Core/obj
 src/VehicleRental.Infrastructure/bin
 src/VehicleRental.Infrastructure/obj
 task.pdf
+src/VehicleRental.TelemetrySimulator/obj
