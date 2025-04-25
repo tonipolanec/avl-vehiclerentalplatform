@@ -75,35 +75,121 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpGet("vehicles/{vehicleId}/odometer")]
-        public async Task<ActionResult<decimal>> GetCurrentOdometer(int vehicleId)
+        public async Task<ActionResult<TelemetryResponse>> GetCurrentOdometer(int vehicleId)
         {
             try
             {
-                var odometer = await _telemetryService.GetCurrentOdometerAsync(vehicleId);
-                return Ok(odometer);
+                var latestOdometer = await _context.Telemetry
+                    .Include(t => t.TelemetryType)
+                    .Include(t => t.Vehicle)
+                    .Where(t => t.VehicleId == vehicleId &&
+                               t.TelemetryType.Name.ToLower() == "odometer" &&
+                               t.IsValid)
+                    .OrderByDescending(t => t.Timestamp)
+                    .FirstOrDefaultAsync();
+
+                if (latestOdometer == null)
+                {
+                    return NotFound($"No odometer readings found for vehicle {vehicleId}");
+                }
+
+                var response = new TelemetryResponse
+                {
+                    Value = latestOdometer.Value,
+                    Timestamp = ((DateTimeOffset)latestOdometer.Timestamp).ToUnixTimeSeconds(),
+                    IsValid = latestOdometer.IsValid,
+                    ValidationMessage = latestOdometer.ValidationMessage,
+                };
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving odometer for vehicle {VehicleId}", vehicleId);
-                return HandleError<decimal>(ex, "GetCurrentOdometer", "ODOMETER_RETRIEVAL_ERROR");
+                return HandleError<TelemetryResponse>(ex, "GetCurrentOdometer", "ODOMETER_RETRIEVAL_ERROR");
+            }
+        }
+
+        [HttpGet("vehicles/{vehicleId}/batterysoc")]
+        public async Task<ActionResult<TelemetryResponse>> GetCurrentBattery(int vehicleId)
+        {
+            try
+            {
+                var latestBattery = await _context.Telemetry
+                    .Include(t => t.TelemetryType)
+                    .Include(t => t.Vehicle)
+                    .Where(t => t.VehicleId == vehicleId &&
+                               t.TelemetryType.Name.ToLower() == "battery_soc" &&
+                               t.IsValid)
+                    .OrderByDescending(t => t.Timestamp)
+                    .FirstOrDefaultAsync();
+
+                if (latestBattery == null)
+                {
+                    return NotFound($"No battery SOC readings found for vehicle {vehicleId}");
+                }
+
+                var response = new TelemetryResponse
+                {
+                    Value = latestBattery.Value,
+                    Timestamp = ((DateTimeOffset)latestBattery.Timestamp).ToUnixTimeSeconds(),
+                    IsValid = latestBattery.IsValid,
+                    ValidationMessage = latestBattery.ValidationMessage,
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving battery SOC for vehicle {VehicleId}", vehicleId);
+                return HandleError<TelemetryResponse>(ex, "GetCurrentBatterySoc", "BATTERY_RETRIEVAL_ERROR");
             }
         }
 
         [HttpGet("vehicles/{vehicleId}/odometer/history")]
-        public async Task<ActionResult<IEnumerable<Telemetry>>> GetOdometerHistory(
+        public async Task<ActionResult<IEnumerable<TelemetryResponse>>> GetOdometerHistory(
             int vehicleId,
-            [FromQuery] DateTime? startDate = null,
-            [FromQuery] DateTime? endDate = null)
+            [FromQuery] long? startDate = null,
+            [FromQuery] long? endDate = null)
         {
             try
             {
-                var history = await _telemetryService.GetOdometerHistoryAsync(vehicleId, startDate, endDate);
+                var query = _context.Telemetry
+                    .Include(t => t.TelemetryType)
+                    .Include(t => t.Vehicle)
+                    .Where(t => t.VehicleId == vehicleId &&
+                               t.TelemetryType.Name.ToLower() == "odometer" &&
+                               t.IsValid);
+
+                if (startDate.HasValue)
+                {
+                    var startDateTime = DateTimeOffset.FromUnixTimeSeconds(startDate.Value).UtcDateTime;
+                    query = query.Where(t => t.Timestamp >= startDateTime);
+                }
+
+                if (endDate.HasValue)
+                {
+                    var endDateTime = DateTimeOffset.FromUnixTimeSeconds(endDate.Value).UtcDateTime;
+                    query = query.Where(t => t.Timestamp <= endDateTime);
+                }
+
+                var history = await query
+                    .OrderBy(t => t.Timestamp)
+                    .Select(t => new TelemetryResponse
+                    {
+                        Value = t.Value,
+                        Timestamp = ((DateTimeOffset)t.Timestamp).ToUnixTimeSeconds(),
+                        IsValid = t.IsValid,
+                        ValidationMessage = t.ValidationMessage
+                    })
+                    .ToListAsync();
+
                 return Ok(history);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving odometer history for vehicle {VehicleId}", vehicleId);
-                return HandleError<IEnumerable<Telemetry>>(ex, "GetOdometerHistory", "ODOMETER_HISTORY_RETRIEVAL_ERROR");
+                return HandleError<IEnumerable<TelemetryResponse>>(ex, "GetOdometerHistory", "ODOMETER_HISTORY_RETRIEVAL_ERROR");
             }
         }
     }
