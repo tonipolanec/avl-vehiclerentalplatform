@@ -8,6 +8,7 @@ using VehicleRental.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using VehicleRental.Core.DTOs;
 
 namespace VehicleRental.UnitTests
 {
@@ -60,8 +61,6 @@ namespace VehicleRental.UnitTests
             };
         }
 
-
-
         [Fact]
         public async Task ProcessTelemetry_WithInvalidOdometer_ShouldMarkAsInvalid()
         {
@@ -77,23 +76,24 @@ namespace VehicleRental.UnitTests
             var telemetryService = new TelemetryService(_context, _loggerMock.Object);
 
             // Act
-            var telemetry = new Telemetry
+            var telemetryRequest = new TelemetryRequest
             {
                 VehicleId = testVehicle.Id,
                 TelemetryTypeId = odometerTelemetryType.Id,
                 Value = -100, // Invalid negative value
-                Timestamp = DateTime.UtcNow,
-                IsValid = true,
-                ValidationMessage = "Valid",
-                Vehicle = testVehicle,
-                TelemetryType = odometerTelemetryType
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
             };
 
-            await telemetryService.ProcessTelemetryAsync(telemetry);
+            await telemetryService.ProcessTelemetryAsync(telemetryRequest);
 
             // Assert
-            Assert.False(telemetry.IsValid);
-            Assert.Contains("negative", telemetry.ValidationMessage.ToLower());
+            var savedTelemetry = await _context.Telemetry
+                .FirstOrDefaultAsync(t => t.VehicleId == testVehicle.Id &&
+                                        t.TelemetryTypeId == odometerTelemetryType.Id);
+
+            Assert.NotNull(savedTelemetry);
+            Assert.False(savedTelemetry.IsValid);
+            Assert.Contains("negative", savedTelemetry.ValidationMessage.ToLower());
         }
 
         [Fact]
@@ -124,23 +124,25 @@ namespace VehicleRental.UnitTests
             var telemetryService = new TelemetryService(_context, _loggerMock.Object);
 
             // Act
-            var newTelemetry = new Telemetry
+            var telemetryRequest = new TelemetryRequest
             {
                 VehicleId = testVehicle.Id,
                 TelemetryTypeId = odometerTelemetryType.Id,
                 Value = 900, // Lower than previous reading
-                Timestamp = DateTime.UtcNow,
-                IsValid = true,
-                ValidationMessage = "Valid",
-                Vehicle = testVehicle,
-                TelemetryType = odometerTelemetryType
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
             };
 
-            await telemetryService.ProcessTelemetryAsync(newTelemetry);
+            await telemetryService.ProcessTelemetryAsync(telemetryRequest);
 
             // Assert
-            Assert.False(newTelemetry.IsValid);
-            Assert.Contains("less than", newTelemetry.ValidationMessage.ToLower());
+            var savedTelemetry = await _context.Telemetry
+                .FirstOrDefaultAsync(t => t.VehicleId == testVehicle.Id &&
+                                        t.TelemetryTypeId == odometerTelemetryType.Id &&
+                                        t.Value == 900);
+
+            Assert.NotNull(savedTelemetry);
+            Assert.False(savedTelemetry.IsValid);
+            Assert.Contains("less than", savedTelemetry.ValidationMessage.ToLower());
         }
 
         [Fact]
@@ -158,25 +160,21 @@ namespace VehicleRental.UnitTests
             var telemetryService = new TelemetryService(_context, _loggerMock.Object);
 
             // Act
-            var telemetry = new Telemetry
+            var telemetryRequest = new TelemetryRequest
             {
                 VehicleId = testVehicle.Id,
                 TelemetryTypeId = batterySocTelemetryType.Id,
                 Value = 85,
-                Timestamp = DateTime.UtcNow,
-                IsValid = true,
-                ValidationMessage = "Valid",
-                Vehicle = testVehicle,
-                TelemetryType = batterySocTelemetryType
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
             };
 
-            await telemetryService.ProcessTelemetryAsync(telemetry);
+            await telemetryService.ProcessTelemetryAsync(telemetryRequest);
 
             // Assert
             var savedTelemetry = await _context.Telemetry
                 .FirstOrDefaultAsync(t => t.VehicleId == testVehicle.Id &&
                                         t.TelemetryTypeId == batterySocTelemetryType.Id &&
-                                        t.Timestamp == telemetry.Timestamp);
+                                        t.Value == 85);
 
             Assert.NotNull(savedTelemetry);
             Assert.True(savedTelemetry.IsValid);

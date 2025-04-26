@@ -74,8 +74,8 @@ namespace VehicleRental.UnitTests
             {
                 CustomerId = customer.Id,
                 VehicleId = vehicle.Id,
-                StartDate = DateTime.UtcNow.AddDays(1),
-                EndDate = DateTime.UtcNow.AddDays(3)
+                StartDate = DateTimeOffset.UtcNow.AddDays(1).ToUnixTimeSeconds(),
+                EndDate = DateTimeOffset.UtcNow.AddDays(3).ToUnixTimeSeconds()
             };
 
             await Assert.ThrowsAsync<InvalidOperationException>(() => rentalService.CreateRentalAsync(newRentalRequest));
