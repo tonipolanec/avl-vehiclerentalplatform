@@ -41,20 +41,29 @@ namespace VehicleRental.Infrastructure.Services
                 // If this is an odometer reading, validate against the latest reading
                 if (telemetryType.Name.ToLower() == "odometer")
                 {
-                    var latestOdometer = await _context.Telemetry
-                        .Include(t => t.TelemetryType)
-                        .Where(t => t.VehicleId == telemetry.VehicleId &&
-                                   t.TelemetryType.Name.ToLower() == "odometer" &&
-                                   t.IsValid)
-                        .OrderByDescending(t => t.Timestamp)
-                        .FirstOrDefaultAsync();
-
-                    if (latestOdometer != null && telemetry.Value < latestOdometer.Value)
+                    // Check if the odometer reading is positive
+                    if (telemetry.Value < 0)
                     {
-                        _logger.LogWarning("Received odometer reading {NewValue} less than latest value {LatestValue} for vehicle {VehicleId}",
-                            telemetry.Value, latestOdometer.Value, telemetry.VehicleId);
+                        _logger.LogWarning("Received negative odometer reading {Value} for vehicle {VehicleId}", telemetry.Value, telemetry.VehicleId);
                         telemetry.IsValid = false;
-                        telemetry.ValidationMessage = "Odometer reading cannot be less than latest value";
+                        telemetry.ValidationMessage = "Odometer reading cannot be negative";
+                    } else {
+
+                        var latestOdometer = await _context.Telemetry
+                            .Include(t => t.TelemetryType)
+                            .Where(t => t.VehicleId == telemetry.VehicleId &&
+                                    t.TelemetryType.Name.ToLower() == "odometer" &&
+                                    t.IsValid)
+                            .OrderByDescending(t => t.Timestamp)
+                            .FirstOrDefaultAsync();
+
+                        if (latestOdometer != null && telemetry.Value < latestOdometer.Value)
+                        {
+                            _logger.LogWarning("Received odometer reading {NewValue} less than latest value {LatestValue} for vehicle {VehicleId}",
+                                telemetry.Value, latestOdometer.Value, telemetry.VehicleId);
+                            telemetry.IsValid = false;
+                            telemetry.ValidationMessage = "Odometer reading cannot be less than latest value";
+                        }
                     }
                 }
 

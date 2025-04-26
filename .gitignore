@@ -13,3 +13,6 @@ src/VehicleRental.TelemetrySimulator/bin/Debug/net8.0
 src/VehicleRental.TelemetrySimulator/bin/Debug/net8.0
 tests/VehicleRental.IntegrationTests/obj/Debug/net8.0
 tests/VehicleRental.UnitTests/obj/Debug/net8.0
+tests/VehicleRental.UnitTests/bin/Debug/net8.0
+tests/VehicleRental.UnitTests/obj
+tests/VehicleRental.IntegrationTests/bin/Debug/net8.0
