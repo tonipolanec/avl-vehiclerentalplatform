@@ -6,7 +6,7 @@ using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Routing;
-
+using VehicleRental.Infrastructure.Services.Validators;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -37,6 +37,8 @@ builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<IPricingCalculator, PricingCalculator>();
 builder.Services.AddScoped<ITelemetryService, TelemetryService>();
+builder.Services.AddScoped<ITelemetryValidator, OdometerValidator>();
+builder.Services.AddScoped<ITelemetryValidator, BatteryValidator>();
 
 var app = builder.Build();
 
