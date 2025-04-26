@@ -8,3 +8,8 @@ src/VehicleRental.Infrastructure/bin
 src/VehicleRental.Infrastructure/obj
 task.pdf
 src/VehicleRental.TelemetrySimulator/obj
+src/VehicleRental.TelemetrySimulator/bin/Debug/net8.0
+src/VehicleRental.TelemetrySimulator/bin/Debug/net8.0
+src/VehicleRental.TelemetrySimulator/bin/Debug/net8.0
+tests/VehicleRental.IntegrationTests/obj/Debug/net8.0
+tests/VehicleRental.UnitTests/obj/Debug/net8.0

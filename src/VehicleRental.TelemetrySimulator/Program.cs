@@ -14,6 +14,7 @@ public class TelemetryRecord
     public string name { get; set; } = string.Empty;
     public decimal value { get; set; }
     public long timestamp { get; set; }
+    public bool Sent { get; set; }
 }
 
 public class TelemetryRequest
@@ -32,6 +33,7 @@ public class TelemetryRecordMap : ClassMap<TelemetryRecord>
         Map(m => m.name).Name("name");
         Map(m => m.value).Name("value");
         Map(m => m.timestamp).Name("timestamp");
+        Map(m => m.Sent).Ignore();
     }
 }
 
@@ -73,91 +75,57 @@ class Program
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
             HasHeaderRecord = true,
+            HeaderValidated = null,
+            MissingFieldFound = null
         };
 
         using var reader = new StreamReader(csvPath);
         using var csv = new CsvReader(reader, config);
+        csv.Context.RegisterClassMap<TelemetryRecordMap>();
         var records = csv.GetRecords<TelemetryRecord>().ToList();
 
-        // Sort records by timestamp
-        records.Sort((a, b) => a.timestamp.CompareTo(b.timestamp));
+        var lastTimestamp = 0L;
+        var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
-        // Get the last uploaded telemetry timestamp for each vehicle and type
-        var lastTimestamps = new Dictionary<(string vin, string name), long>();
-        foreach (var vehicleId in _vehicleIds.Values)
+        var response = await _httpClient.GetAsync($"{_apiBaseUrl}/vehicles/1/odometer");
+        if (response.IsSuccessStatusCode)
         {
-            foreach (var telemetryType in _telemetryTypeIds.Keys)
+            var telemetry = await response.Content.ReadFromJsonAsync<TelemetryResponse>();
+            if (telemetry != null)
             {
-                try
-                {
-                    var response = await _httpClient.GetAsync($"{_apiBaseUrl}/vehicles/{vehicleId}/{telemetryType}");
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var telemetry = await response.Content.ReadFromJsonAsync<TelemetryResponse>();
-                        if (telemetry != null)
-                        {
-                            var vin = _vehicleIds.FirstOrDefault(x => x.Value == vehicleId).Key;
-                            lastTimestamps[(vin, telemetryType)] = telemetry.Timestamp;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Warning: Could not get last telemetry timestamp for vehicle {vehicleId}, type {telemetryType}: {ex.Message}");
-                }
+                lastTimestamp = telemetry.Timestamp;
             }
         }
 
-        // Find the starting index for each vehicle and type
-        var startIndices = new Dictionary<(string vin, string name), int>();
-        for (int i = 0; i < records.Count; i++)
+        while (true)
         {
-            var record = records[i];
-            var key = (record.vin, record.name.ToLower());
-            if (!startIndices.ContainsKey(key))
+            currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            foreach (var record in records.Where(r => !r.Sent))
             {
-                if (lastTimestamps.TryGetValue(key, out var lastTimestamp))
+                if (record.timestamp <= lastTimestamp)
                 {
-                    if (record.timestamp > lastTimestamp)
-                    {
-                        startIndices[key] = i;
-                    }
+                    record.Sent = true;
+                    continue;
                 }
-                else
+
+                if (currentTime >= record.timestamp)
                 {
-                    startIndices[key] = i;
+                    await SendTelemetryData(record);
+                    record.Sent = true;
                 }
             }
-        }
 
-        // Process records starting from the appropriate index for each vehicle and type
-        var currentIndices = new Dictionary<(string vin, string name), int>(startIndices);
-        while (currentIndices.Any(kvp => kvp.Value < records.Count))
-        {
-            var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-
-            foreach (var kvp in currentIndices.ToList())
+            // If all records are sent, exit the loop
+            if (records.All(r => r.Sent))
             {
-                if (kvp.Value >= records.Count) continue;
-
-                var record = records[kvp.Value];
-                if (record.vin == kvp.Key.vin && record.name.ToLower() == kvp.Key.name)
-                {
-                    if (currentTime >= record.timestamp)
-                    {
-                        await SendTelemetryData(record);
-                        currentIndices[kvp.Key]++;
-                    }
-                }
+                Console.WriteLine("All telemetry data processed!");
+                break;
             }
 
             // Wait for 1 second before checking again
             await Task.Delay(1000);
         }
-
-        Console.WriteLine("All telemetry data processed!");
     }
-
 
     private static async Task SendTelemetryData(TelemetryRecord record)
     {
@@ -175,18 +143,6 @@ class Program
                 return;
             }
 
-            // Check if telemetry data already exists
-            var response = await _httpClient.GetAsync($"{_apiBaseUrl}/vehicles/{vehicleId}/{record.name.ToLower()}");
-            if (response.IsSuccessStatusCode)
-            {
-                var existingTelemetry = await response.Content.ReadFromJsonAsync<TelemetryResponse>();
-                if (existingTelemetry != null && existingTelemetry.Timestamp == record.timestamp)
-                {
-                    Console.WriteLine($"Skipping duplicate telemetry data: vehicle {vehicleId} - {record.name} = {record.value} at {DateTimeOffset.FromUnixTimeSeconds(record.timestamp).ToOffset(TimeSpan.FromHours(2))}");
-                    return;
-                }
-            }
-
             var request = new TelemetryRequest
             {
                 VehicleId = vehicleId,
@@ -195,7 +151,7 @@ class Program
                 Timestamp = record.timestamp
             };
 
-            response = await _httpClient.PostAsJsonAsync(_apiBaseUrl, request);
+            var response = await _httpClient.PostAsJsonAsync(_apiBaseUrl, request);
             response.EnsureSuccessStatusCode();
             if (record.name == "odometer")
             {
