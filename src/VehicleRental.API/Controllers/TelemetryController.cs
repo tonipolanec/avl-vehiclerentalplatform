@@ -4,6 +4,7 @@ using VehicleRental.Core.DTOs;
 using VehicleRental.Core.Entities;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
+using VehicleRental.Infrastructure.Helpers;
 
 namespace VehicleRental.API.Controllers
 {
@@ -28,43 +29,9 @@ namespace VehicleRental.API.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessTelemetry([FromBody] TelemetryRequest request)
         {
-            var _isValid = true;
-            var _validationMessage = "Valid";
             try
             {
-                var vehicle = await _context.Vehicles
-                    .FirstOrDefaultAsync(v => v.Id == request.VehicleId);
-
-                var telemetryType = await _context.TelemetryTypes
-                    .FirstOrDefaultAsync(t => t.Id == request.TelemetryTypeId);
-
-                if (vehicle == null || telemetryType == null)
-                {
-                    _isValid = false;
-                    _validationMessage = "Vehicle or telemetry type invalid:";
-                    if (vehicle == null)
-                    {
-                        _validationMessage += " vehicle";
-                    }
-                    if (telemetryType == null)
-                    {
-                        _validationMessage += " telemetryType";
-                    }
-                }
-
-                var telemetry = new Telemetry
-                {
-                    VehicleId = request.VehicleId,
-                    TelemetryTypeId = request.TelemetryTypeId,
-                    Value = request.Value,
-                    Timestamp = DateTimeOffset.FromUnixTimeSeconds(request.Timestamp).UtcDateTime,
-                    IsValid = _isValid,
-                    ValidationMessage = _validationMessage,
-                    Vehicle = vehicle,
-                    TelemetryType = telemetryType
-                };
-
-                await _telemetryService.ProcessTelemetryAsync(telemetry);
+                await _telemetryService.ProcessTelemetryAsync(request);
                 return Ok();
             }
             catch (Exception ex)
@@ -79,29 +46,8 @@ namespace VehicleRental.API.Controllers
         {
             try
             {
-                var latestOdometer = await _context.Telemetry
-                    .Include(t => t.TelemetryType)
-                    .Include(t => t.Vehicle)
-                    .Where(t => t.VehicleId == vehicleId &&
-                               t.TelemetryType.Name.ToLower() == "odometer" &&
-                               t.IsValid)
-                    .OrderByDescending(t => t.Timestamp)
-                    .FirstOrDefaultAsync();
-
-                if (latestOdometer == null)
-                {
-                    return NotFound($"No odometer readings found for vehicle {vehicleId}");
-                }
-
-                var response = new TelemetryResponse
-                {
-                    Value = latestOdometer.Value,
-                    Timestamp = ((DateTimeOffset)latestOdometer.Timestamp).ToUnixTimeSeconds(),
-                    IsValid = latestOdometer.IsValid,
-                    ValidationMessage = latestOdometer.ValidationMessage,
-                };
-
-                return Ok(response);
+                var currentOdometer = await _telemetryService.GetCurrentOdometerAsync(vehicleId);
+                return Ok(currentOdometer);
             }
             catch (Exception ex)
             {
@@ -115,29 +61,8 @@ namespace VehicleRental.API.Controllers
         {
             try
             {
-                var latestBattery = await _context.Telemetry
-                    .Include(t => t.TelemetryType)
-                    .Include(t => t.Vehicle)
-                    .Where(t => t.VehicleId == vehicleId &&
-                               t.TelemetryType.Name.ToLower() == "battery_soc" &&
-                               t.IsValid)
-                    .OrderByDescending(t => t.Timestamp)
-                    .FirstOrDefaultAsync();
-
-                if (latestBattery == null)
-                {
-                    return NotFound($"No battery SOC readings found for vehicle {vehicleId}");
-                }
-
-                var response = new TelemetryResponse
-                {
-                    Value = latestBattery.Value,
-                    Timestamp = ((DateTimeOffset)latestBattery.Timestamp).ToUnixTimeSeconds(),
-                    IsValid = latestBattery.IsValid,
-                    ValidationMessage = latestBattery.ValidationMessage,
-                };
-
-                return Ok(response);
+                var currentBattery = await _telemetryService.GetCurrentBatteryAsync(vehicleId);
+                return Ok(currentBattery);
             }
             catch (Exception ex)
             {
@@ -146,6 +71,7 @@ namespace VehicleRental.API.Controllers
             }
         }
 
+        /* NotImplemented - Odometer history
         [HttpGet("vehicles/{vehicleId}/odometer/history")]
         public async Task<ActionResult<IEnumerable<TelemetryResponse>>> GetOdometerHistory(
             int vehicleId,
@@ -192,5 +118,6 @@ namespace VehicleRental.API.Controllers
                 return HandleError<IEnumerable<TelemetryResponse>>(ex, "GetOdometerHistory", "ODOMETER_HISTORY_RETRIEVAL_ERROR");
             }
         }
+        */
     }
 }

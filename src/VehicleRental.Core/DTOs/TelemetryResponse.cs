@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using VehicleRental.Core.Entities;
 
 namespace VehicleRental.Core.DTOs
 {
@@ -9,5 +10,16 @@ namespace VehicleRental.Core.DTOs
         public bool IsValid { get; set; }
         public string ValidationMessage { get; set; } = string.Empty;
 
+        public static TelemetryResponse FromEntity(Telemetry telemetry)
+        {
+            return new TelemetryResponse
+            {
+                Value = telemetry.Value,
+                Timestamp = ((DateTimeOffset)telemetry.Timestamp).ToUnixTimeSeconds(),
+                IsValid = telemetry.IsValid,
+                ValidationMessage = telemetry.ValidationMessage
+            };
+        }
     }
+
 }

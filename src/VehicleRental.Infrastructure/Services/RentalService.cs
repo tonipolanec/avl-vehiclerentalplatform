@@ -5,6 +5,7 @@ using VehicleRental.Core.Entities;
 using VehicleRental.Core.Entities.Enums;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
+using VehicleRental.Infrastructure.Helpers;
 
 namespace VehicleRental.Infrastructure.Services
 {
@@ -26,45 +27,31 @@ namespace VehicleRental.Infrastructure.Services
 
         public async Task<RentalAllDetailsResponse> CreateRentalAsync(CreateRentalRequest request)
         {
+            var startDate = DateTimeOffset.FromUnixTimeSeconds(request.StartDate).UtcDateTime;
+            var endDate = DateTimeOffset.FromUnixTimeSeconds(request.EndDate).UtcDateTime;
+
             // Check for overlapping rentals
             var hasOverlap = await _context.Rentals
                 .AnyAsync(r => r.VehicleId == request.VehicleId &&
                               r.Status != RentalStatus.Cancelled &&
-                              ((r.StartDate <= request.EndDate && r.EndDate >= request.StartDate) ||
-                               (request.StartDate <= r.EndDate && request.EndDate >= r.StartDate)));
+                              ((r.StartDate <= endDate && r.EndDate >= startDate) ||
+                               (startDate <= r.EndDate && endDate >= r.StartDate)));
 
             if (hasOverlap)
-            {
                 throw new InvalidOperationException("Vehicle is already rented during the requested period");
-            }
 
-            var customer = await _context.Customers.FindAsync(request.CustomerId);
-            var vehicle = await _context.Vehicles.FindAsync(request.VehicleId);
 
-            if (customer == null || vehicle == null)
-            {
-                throw new InvalidOperationException("Customer or Vehicle not found");
-            }
+            var customer = await FetchHelpers.GetCustomerByIdAsync(_context, request.CustomerId);
+            var vehicle = await FetchHelpers.GetVehicleByIdAsync(_context, request.VehicleId);
 
-            // var numberOfDays = (int)Math.Ceiling((request.EndDate - request.StartDate).TotalDays);
-            // var totalCost = _pricingCalculator.CalculateRentalPrice(
-            //     totalKilometers: 0,
-            //     numberOfDays: numberOfDays,
-            //     pricePerKm: vehicle.PricePerKmInEuro,
-            //     pricePerDay: vehicle.PricePerDayInEuro,
-            //     batteryDelta: null
-            // );
 
             var rental = new Rental
             {
                 CustomerId = request.CustomerId,
                 VehicleId = request.VehicleId,
-                StartDate = request.StartDate,
-                EndDate = request.EndDate,
+                StartDate = startDate,
+                EndDate = endDate,
                 Status = RentalStatus.Ordered,
-                InitialBatteryLevel = request.InitialBatteryLevel,
-                InitialOdometerReading = request.InitialOdometerReading,
-                TotalCost = 0m,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
                 Customer = customer,
@@ -81,15 +68,7 @@ namespace VehicleRental.Infrastructure.Services
 
         public async Task<RentalAllDetailsResponse> GetRentalByIdAsync(int id)
         {
-            var rental = await _context.Rentals
-                .Include(r => r.Customer)
-                .Include(r => r.Vehicle)
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (rental == null)
-            {
-                throw new KeyNotFoundException($"Rental with ID {id} not found");
-            }
+            var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
 
             return RentalAllDetailsResponse.FromEntity(rental);
         }
@@ -106,37 +85,32 @@ namespace VehicleRental.Infrastructure.Services
 
         public async Task<RentalAllDetailsResponse> UpdateRentalAsync(int id, UpdateRentalDatesRequest request)
         {
-            var rental = await _context.Rentals
-                .Include(r => r.Vehicle)
-                .Include(r => r.Customer)
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (rental == null)
-            {
-                throw new KeyNotFoundException($"Rental with ID {id} not found");
-            }
+            var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
 
             if (rental.Status == RentalStatus.Cancelled)
-            {
                 throw new InvalidOperationException("Cannot update a cancelled rental");
-            }
 
+            var newStartDate = request.StartDate.HasValue
+                ? DateTimeOffset.FromUnixTimeSeconds(request.StartDate.Value).UtcDateTime
+                : rental.StartDate;
+            var newEndDate = request.EndDate.HasValue
+                ? DateTimeOffset.FromUnixTimeSeconds(request.EndDate.Value).UtcDateTime
+                : rental.EndDate;
 
 
             // Check for overlapping rentals excluding the current rental
             var hasOverlap = await _context.Rentals
                 .AnyAsync(r => r.Id != id &&
                               r.Status != RentalStatus.Cancelled &&
-                              ((r.StartDate <= request.EndDate && r.EndDate >= request.StartDate) ||
-                               (request.StartDate <= r.EndDate && request.EndDate >= r.StartDate)));
+                              ((r.StartDate <= newEndDate && r.EndDate >= newStartDate) ||
+                               (newStartDate <= r.EndDate && newEndDate >= r.StartDate)));
 
             if (hasOverlap)
-            {
                 throw new InvalidOperationException("Vehicle is already rented during the requested period");
-            }
 
-            rental.StartDate = request.StartDate;
-            rental.EndDate = request.EndDate;
+
+            rental.StartDate = newStartDate;
+            rental.EndDate = newEndDate;
             rental.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
@@ -149,18 +123,10 @@ namespace VehicleRental.Infrastructure.Services
 
         public async Task CancelRentalAsync(int id)
         {
-            var rental = await _context.Rentals
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (rental == null)
-            {
-                throw new KeyNotFoundException($"Rental with ID {id} not found");
-            }
+            var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
 
             if (rental.Status == RentalStatus.Cancelled)
-            {
                 throw new InvalidOperationException("Rental is already cancelled");
-            }
 
             rental.Status = RentalStatus.Cancelled;
             rental.UpdatedAt = DateTime.UtcNow;
@@ -171,35 +137,43 @@ namespace VehicleRental.Infrastructure.Services
         }
 
 
-        public async Task<RentalAllDetailsResponse> FinishRentalAsync(int id, FinishRentalRequest request)
+        public async Task<RentalAllDetailsResponse> FinishRentalAsync(int id)
         {
-            var rental = await _context.Rentals
-                .Include(r => r.Vehicle)
-                .Include(r => r.Customer)
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (rental == null)
-            {
-                throw new KeyNotFoundException($"Rental with ID {id} not found");
-            }
+            var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
 
             if (rental.Status != RentalStatus.Ordered)
             {
                 throw new InvalidOperationException("Rental is not in ordered status");
             }
 
+            var odometerTelemetry = await FetchHelpers.GetTelemetryTypeAsync(_context, "odometer");
+            var batteryTelemetry = await FetchHelpers.GetTelemetryTypeAsync(_context, "battery_soc");
+
+            var odometerReadingRentalStart = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, odometerTelemetry.Id, rental.StartDate, true);
+            var odometerReadingRentalEnd = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, odometerTelemetry.Id, rental.EndDate, false);
+
+            var batteryReadingRentalStart = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, batteryTelemetry.Id, rental.StartDate, true);
+            var batteryReadingRentalEnd = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, batteryTelemetry.Id, rental.EndDate, false);
+
+
+            rental.InitialOdometerReading = odometerReadingRentalStart.Value;
+            rental.FinalOdometerReading = odometerReadingRentalEnd.Value;
+            rental.InitialBatteryLevel = batteryReadingRentalStart.Value;
+            rental.FinalBatteryLevel = batteryReadingRentalEnd.Value;
+
+
             var numberOfDays = (int)Math.Ceiling((rental.EndDate - rental.StartDate).TotalDays);
+
+
             var totalCost = _pricingCalculator.CalculateRentalPrice(
                 totalKilometers: rental.TotalDistance,
                 numberOfDays: numberOfDays,
                 pricePerKm: rental.Vehicle.PricePerKmInEuro,
                 pricePerDay: rental.Vehicle.PricePerDayInEuro,
-                batteryDelta: rental.FinalBatteryLevel - rental.InitialBatteryLevel
+                batteryDelta: rental.BatteryDelta
             );
 
-            rental.Status = request.Status;
-            rental.FinalBatteryLevel = request.FinalBatteryLevel;
-            rental.FinalOdometerReading = request.FinalOdometerReading;
+            rental.Status = RentalStatus.Completed;
             rental.TotalCost = totalCost;
             rental.UpdatedAt = DateTime.UtcNow;
 

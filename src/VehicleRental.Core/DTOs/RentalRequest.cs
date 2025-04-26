@@ -12,28 +12,18 @@ namespace VehicleRental.Core.DTOs
         public int VehicleId { get; set; }
 
         [Required]
-        public DateTime StartDate { get; set; }
+        public long StartDate { get; set; } = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
         [Required]
-        public DateTime EndDate { get; set; }
-
-        public RentalStatus Status { get; set; } = RentalStatus.Ordered;
-
-        [Range(0, 100)]
-        public decimal? InitialBatteryLevel { get; set; } = 100;
-
-        [Range(0, 9999999999)]
-        public decimal? InitialOdometerReading { get; set; } = 0;
+        public long EndDate { get; set; }
 
     }
 
     public class UpdateRentalDatesRequest
     {
-        [Required]
-        public DateTime StartDate { get; set; }
+        public long? StartDate { get; set; }
 
-        [Required]
-        public DateTime EndDate { get; set; }
+        public long? EndDate { get; set; }
     }
 
     public class UpdateRentalStatusRequest
@@ -42,17 +32,4 @@ namespace VehicleRental.Core.DTOs
         public RentalStatus Status { get; set; }
     }
 
-    public class FinishRentalRequest
-    {
-        public RentalStatus Status { get; set; } = RentalStatus.Completed;
-
-        [Required]
-        public decimal FinalOdometerReading { get; set; }
-
-        [Required]
-        public decimal FinalBatteryLevel { get; set; }
-
-        //[Required]
-        //public decimal TotalCost { get; set; }
-    }
 }

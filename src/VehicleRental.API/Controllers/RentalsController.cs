@@ -93,11 +93,11 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpPut("{id}/finish")]
-        public async Task<ActionResult<RentalAllDetailsResponse>> FinishRental(int id, FinishRentalRequest request)
+        public async Task<ActionResult<RentalAllDetailsResponse>> FinishRental(int id)
         {
             try
             {
-                var rental = await _rentalService.FinishRentalAsync(id, request);
+                var rental = await _rentalService.FinishRentalAsync(id);
                 return Ok(rental);
             }
             catch (Exception ex)

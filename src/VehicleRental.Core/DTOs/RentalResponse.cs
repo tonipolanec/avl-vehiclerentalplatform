@@ -11,8 +11,8 @@ namespace VehicleRental.Core.DTOs
         public string VehicleVIN { get; set; } = string.Empty;
         public string VehicleMake { get; set; } = string.Empty;
         public string VehicleModel { get; set; } = string.Empty;
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public long StartDate { get; set; }
+        public long EndDate { get; set; }
         public string Status { get; set; } = string.Empty;
         public decimal? InitialOdometerReading { get; set; }
         public decimal? FinalOdometerReading { get; set; }
@@ -32,8 +32,8 @@ namespace VehicleRental.Core.DTOs
                 VehicleVIN = rental.Vehicle.VIN,
                 VehicleMake = rental.Vehicle.Make,
                 VehicleModel = rental.Vehicle.Model,
-                StartDate = rental.StartDate,
-                EndDate = rental.EndDate,
+                StartDate = ((DateTimeOffset)rental.StartDate).ToUnixTimeSeconds(),
+                EndDate = ((DateTimeOffset)rental.EndDate).ToUnixTimeSeconds(),
                 Status = rental.Status.ToString(),
                 InitialOdometerReading = rental.InitialOdometerReading,
                 FinalOdometerReading = rental.FinalOdometerReading,
@@ -51,8 +51,8 @@ namespace VehicleRental.Core.DTOs
         public int CustomerId { get; set; }
         public int VehicleId { get; set; }
         public string Status { get; set; } = string.Empty;
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public long StartDate { get; set; }
+        public long EndDate { get; set; }
 
         public static RentalBasicDetailsResponse FromEntity(Rental rental)
         {
@@ -62,8 +62,8 @@ namespace VehicleRental.Core.DTOs
                 CustomerId = rental.CustomerId,
                 VehicleId = rental.VehicleId,
                 Status = rental.Status.ToString(),
-                StartDate = rental.StartDate,
-                EndDate = rental.EndDate
+                StartDate = ((DateTimeOffset)rental.StartDate).ToUnixTimeSeconds(),
+                EndDate = ((DateTimeOffset)rental.EndDate).ToUnixTimeSeconds()
             };
         }
     }

@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using VehicleRental.Core.DTOs;
 using VehicleRental.Core.Entities;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
+using VehicleRental.Infrastructure.Helpers;
+using VehicleRental.Infrastructure.Services.Validators;
 
 namespace VehicleRental.Infrastructure.Services
 {
@@ -10,125 +13,69 @@ namespace VehicleRental.Infrastructure.Services
     {
         private readonly VehicleRentalDbContext _context;
         private readonly ILogger<TelemetryService> _logger;
+        private readonly IEnumerable<ITelemetryValidator> _validators;
 
-        public TelemetryService(VehicleRentalDbContext context, ILogger<TelemetryService> logger)
+        public TelemetryService(
+            VehicleRentalDbContext context,
+            ILogger<TelemetryService> logger,
+            IEnumerable<ITelemetryValidator> validators)
         {
             _context = context;
             _logger = logger;
+            _validators = validators;
         }
 
-        public async Task ProcessTelemetryAsync(Telemetry telemetry)
+        public async Task ProcessTelemetryAsync(TelemetryRequest request)
         {
-            try
+            var telemetryType = await FetchHelpers.GetTelemetryTypeByIdAsync(_context, request.TelemetryTypeId);
+            var vehicle = await FetchHelpers.GetVehicleByIdAsync(_context, request.VehicleId);
+
+            var validator = _validators.FirstOrDefault(v => v.CanValidate(telemetryType.Name));
+            var (isValid, validationMessage) = validator != null
+                ? await validator.ValidateAsync(request, _context)
+                : (true, "Valid");
+
+            var telemetry = new Telemetry
             {
-                // Validate telemetry
-                if (!telemetry.IsValid)
-                {
-                    _logger.LogWarning("Received invalid telemetry for vehicle {VehicleId}", telemetry.VehicleId);
-                    return;
-                }
+                VehicleId = request.VehicleId,
+                TelemetryTypeId = request.TelemetryTypeId,
+                Value = request.Value,
+                Timestamp = DateTimeOffset.FromUnixTimeSeconds(request.Timestamp).UtcDateTime,
+                IsValid = isValid,
+                ValidationMessage = validationMessage,
+                Vehicle = vehicle,
+                TelemetryType = telemetryType
+            };
 
-                // Get telemetry type
-                var telemetryType = await _context.TelemetryTypes
-                    .FirstOrDefaultAsync(t => t.Id == telemetry.TelemetryTypeId);
+            telemetry.ProcessedAt = DateTime.UtcNow;
+            await _context.Telemetry.AddAsync(telemetry);
+            await _context.SaveChangesAsync();
 
-                if (telemetryType == null)
-                {
-                    _logger.LogError("Telemetry type {TelemetryTypeId} not found", telemetry.TelemetryTypeId);
-                    return;
-                }
-
-                // If this is an odometer reading, validate against the latest reading
-                if (telemetryType.Name.ToLower() == "odometer")
-                {
-                    // Check if the odometer reading is positive
-                    if (telemetry.Value < 0)
-                    {
-                        _logger.LogWarning("Received negative odometer reading {Value} for vehicle {VehicleId}", telemetry.Value, telemetry.VehicleId);
-                        telemetry.IsValid = false;
-                        telemetry.ValidationMessage = "Odometer reading cannot be negative";
-                    } else {
-
-                        var latestOdometer = await _context.Telemetry
-                            .Include(t => t.TelemetryType)
-                            .Where(t => t.VehicleId == telemetry.VehicleId &&
-                                    t.TelemetryType.Name.ToLower() == "odometer" &&
-                                    t.IsValid)
-                            .OrderByDescending(t => t.Timestamp)
-                            .FirstOrDefaultAsync();
-
-                        if (latestOdometer != null && telemetry.Value < latestOdometer.Value)
-                        {
-                            _logger.LogWarning("Received odometer reading {NewValue} less than latest value {LatestValue} for vehicle {VehicleId}",
-                                telemetry.Value, latestOdometer.Value, telemetry.VehicleId);
-                            telemetry.IsValid = false;
-                            telemetry.ValidationMessage = "Odometer reading cannot be less than latest value";
-                        }
-                    }
-                }
-
-
-                // Save telemetry reading
-                telemetry.ProcessedAt = DateTime.UtcNow;
-                await _context.Telemetry.AddAsync(telemetry);
-                await _context.SaveChangesAsync();
-
-                _logger.LogInformation("Processed telemetry for vehicle {VehicleId}", telemetry.VehicleId);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error processing telemetry for vehicle {VehicleId}", telemetry.VehicleId);
-                throw;
-            }
+            _logger.LogInformation("Processed telemetry for vehicle {VehicleId}", telemetry.VehicleId);
         }
 
-        public async Task<decimal> GetCurrentOdometerAsync(int vehicleId)
+        public async Task<TelemetryResponse> GetCurrentOdometerAsync(int vehicleId)
         {
-            var latestOdometer = await _context.Telemetry
-                .Include(t => t.TelemetryType)
-                .Where(t => t.VehicleId == vehicleId &&
-                           t.TelemetryType.Name.ToLower() == "odometer" &&
-                           t.IsValid)
-                .OrderByDescending(t => t.Timestamp)
-                .FirstOrDefaultAsync();
+            var odometerTelemetry = await FetchHelpers.GetTelemetryTypeAsync(_context, "odometer");
+            var latestOdometer = await FetchHelpers.GetLatestTelemetryAsync(_context, vehicleId, odometerTelemetry.Id);
 
-            if (latestOdometer == null)
-            {
-                throw new KeyNotFoundException($"No odometer readings found for vehicle {vehicleId}");
-            }
-
-            return latestOdometer.Value;
+            return TelemetryResponse.FromEntity(latestOdometer);
         }
 
-        public async Task<IEnumerable<Telemetry>> GetOdometerHistoryAsync(int vehicleId, DateTime? startDate = null, DateTime? endDate = null)
-        {
-            var query = _context.Telemetry
-                .Include(t => t.TelemetryType)
-                .Where(t => t.VehicleId == vehicleId &&
-                           t.TelemetryType.Name.ToLower() == "odometer" &&
-                           t.IsValid);
-
-            if (startDate.HasValue)
-            {
-                query = query.Where(t => t.Timestamp >= startDate.Value);
-            }
-
-            if (endDate.HasValue)
-            {
-                query = query.Where(t => t.Timestamp <= endDate.Value);
-            }
-
-            return await query
-                .OrderBy(t => t.Timestamp)
-                .ToListAsync();
-        }
-
-        public Task<decimal> GetCurrentBatteryLevelAsync(int vehicleId)
+        public Task<IEnumerable<Telemetry>> GetOdometerHistoryAsync(int vehicleId, DateTime? startDate = null, DateTime? endDate = null)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Telemetry>> GetBatteryLevelHistoryAsync(int vehicleId, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<TelemetryResponse> GetCurrentBatteryAsync(int vehicleId)
+        {
+            var batteryTelemetry = await FetchHelpers.GetTelemetryTypeAsync(_context, "battery_soc");
+            var latestBattery = await FetchHelpers.GetLatestTelemetryAsync(_context, vehicleId, batteryTelemetry.Id);
+
+            return TelemetryResponse.FromEntity(latestBattery);
+        }
+
+        public Task<IEnumerable<Telemetry>> GetBatteryHistoryAsync(int vehicleId, DateTime? startDate = null, DateTime? endDate = null)
         {
             throw new NotImplementedException();
         }

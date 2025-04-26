@@ -9,7 +9,7 @@ namespace VehicleRental.Core.Services
         Task<RentalAllDetailsResponse> GetRentalByIdAsync(int id);
         Task<IEnumerable<RentalBasicDetailsResponse>> GetAllRentalsAsync();
         Task<RentalAllDetailsResponse> UpdateRentalAsync(int id, UpdateRentalDatesRequest request);
-        Task<RentalAllDetailsResponse> FinishRentalAsync(int id, FinishRentalRequest request);
+        Task<RentalAllDetailsResponse> FinishRentalAsync(int id);
         Task CancelRentalAsync(int id);
     }
 }
