@@ -5,7 +5,7 @@ using VehicleRental.Core.Entities;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Helpers;
-using VehicleRental.Infrastructure.Services.Validators;
+using VehicleRental.Infrastructure.Interfaces;
 
 namespace VehicleRental.Infrastructure.Services
 {
@@ -25,7 +25,7 @@ namespace VehicleRental.Infrastructure.Services
             _validators = validators;
         }
 
-        public async Task ProcessTelemetryAsync(TelemetryRequest request)
+        public async Task<TelemetryHandshakeResponse> ProcessTelemetryAsync(TelemetryRequest request)
         {
             var telemetryType = await FetchHelpers.GetTelemetryTypeByIdAsync(_context, request.TelemetryTypeId);
             var vehicle = await FetchHelpers.GetVehicleByIdAsync(_context, request.VehicleId);
@@ -52,6 +52,8 @@ namespace VehicleRental.Infrastructure.Services
             await _context.SaveChangesAsync();
 
             _logger.LogInformation("Processed telemetry for vehicle {VehicleId}", telemetry.VehicleId);
+
+            return TelemetryHandshakeResponse.FromEntity(telemetry);
         }
 
         public async Task<TelemetryResponse> GetCurrentOdometerAsync(int vehicleId)

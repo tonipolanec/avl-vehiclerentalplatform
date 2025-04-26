@@ -7,6 +7,7 @@ using VehicleRental.Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Routing;
 using VehicleRental.Infrastructure.Services.Validators;
+using VehicleRental.Infrastructure.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

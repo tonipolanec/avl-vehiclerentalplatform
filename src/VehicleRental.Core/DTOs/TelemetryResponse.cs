@@ -22,4 +22,17 @@ namespace VehicleRental.Core.DTOs
         }
     }
 
+    public class TelemetryHandshakeResponse
+    {
+        public string Message { get; set; } = string.Empty;
+
+        public static TelemetryHandshakeResponse FromEntity(Telemetry telemetry)
+        {
+            return new TelemetryHandshakeResponse
+            {
+                Message = telemetry.ValidationMessage
+            };
+        }
+    }
+
 }

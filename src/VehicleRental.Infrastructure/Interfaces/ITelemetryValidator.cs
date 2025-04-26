@@ -1,7 +1,7 @@
 using VehicleRental.Core.DTOs;
 using VehicleRental.Infrastructure.Data;
 
-namespace VehicleRental.Core.Services
+namespace VehicleRental.Infrastructure.Interfaces
 {
     public interface ITelemetryValidator
     {

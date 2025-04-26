@@ -27,12 +27,15 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessTelemetry([FromBody] TelemetryRequest request)
+        public async Task<ActionResult<TelemetryHandshakeResponse>> ProcessTelemetry([FromBody] TelemetryRequest request)
         {
             try
             {
-                await _telemetryService.ProcessTelemetryAsync(request);
-                return Ok();
+                var response = await _telemetryService.ProcessTelemetryAsync(request);
+                if (response.Message.Contains("Valid"))
+                    return Ok(response);
+                else
+                    return BadRequest(response);
             }
             catch (Exception ex)
             {

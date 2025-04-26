@@ -3,6 +3,8 @@ using Xunit;
 using VehicleRental.Core.Entities;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Services;
+using VehicleRental.Infrastructure.Services.Validators;
+using VehicleRental.Infrastructure.Interfaces;
 using Moq;
 using VehicleRental.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -61,6 +63,14 @@ namespace VehicleRental.UnitTests
             };
         }
 
+        private List<ITelemetryValidator> createValidators() {
+            return new List<ITelemetryValidator>
+            {
+                new OdometerValidator(),
+                new BatteryValidator()
+            };
+        }
+
         [Fact]
         public async Task ProcessTelemetry_WithInvalidOdometer_ShouldMarkAsInvalid()
         {
@@ -73,7 +83,8 @@ namespace VehicleRental.UnitTests
 
             await _context.SaveChangesAsync();
 
-            var telemetryService = new TelemetryService(_context, _loggerMock.Object);
+            var validators = createValidators();
+            var telemetryService = new TelemetryService(_context, _loggerMock.Object, validators);
 
             // Act
             var telemetryRequest = new TelemetryRequest
@@ -121,7 +132,8 @@ namespace VehicleRental.UnitTests
             await _context.Telemetry.AddAsync(initialTelemetry);
             await _context.SaveChangesAsync();
 
-            var telemetryService = new TelemetryService(_context, _loggerMock.Object);
+            var validators = createValidators();
+            var telemetryService = new TelemetryService(_context, _loggerMock.Object, validators);
 
             // Act
             var telemetryRequest = new TelemetryRequest
@@ -157,7 +169,8 @@ namespace VehicleRental.UnitTests
 
             await _context.SaveChangesAsync();
 
-            var telemetryService = new TelemetryService(_context, _loggerMock.Object);
+            var validators = createValidators();
+            var telemetryService = new TelemetryService(_context, _loggerMock.Object, validators);
 
             // Act
             var telemetryRequest = new TelemetryRequest
