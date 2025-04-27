@@ -9,12 +9,10 @@ namespace VehicleRental.API.Controllers
     public class VehiclesController : BaseController
     {
         private readonly IVehicleService _vehicleService;
-        private readonly ILogger<VehiclesController> _logger;
 
-        public VehiclesController(IVehicleService vehicleService, ILogger<VehiclesController> logger)
+        public VehiclesController(IVehicleService vehicleService, ILogger<VehiclesController> logger) : base(logger)
         {
             _vehicleService = vehicleService;
-            _logger = logger;
         }
 
         [HttpGet("{id}")]
@@ -23,11 +21,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+                _logger.LogInformation("Vehicle retrieved: {VehicleId}", id);
                 return Ok(vehicle);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving vehicle {VehicleId}", id);
                 return HandleError<VehicleResponse>(ex, "GetVehicle", "VEHICLE_RETRIEVAL_ERROR");
             }
         }
@@ -38,12 +36,42 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var vehicles = await _vehicleService.GetAllVehiclesAsync();
+                _logger.LogInformation("All vehicles retrieved: {VehicleCount}", vehicles.Count());
                 return Ok(vehicles);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving all vehicles");
                 return HandleError<IEnumerable<VehicleResponse>>(ex, "GetAllVehicles", "VEHICLES_RETRIEVAL_ERROR");
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<VehicleResponse>> CreateVehicle(CreateVehicleRequest request)
+        {
+            try
+            {
+                var vehicle = await _vehicleService.CreateVehicleAsync(request);
+                _logger.LogInformation("Vehicle created: {VehicleId}", vehicle.Id);
+                return CreatedAtAction(nameof(GetVehicle), new { id = vehicle.Id }, vehicle);
+            }
+            catch (Exception ex)
+            {
+                return HandleError<VehicleResponse>(ex, "CreateVehicle", "VEHICLE_CREATION_ERROR");
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteVehicle(int id)
+        {
+            try
+            {
+                await _vehicleService.DeleteVehicleAsync(id);
+                _logger.LogInformation("Vehicle deleted: {VehicleId}", id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return HandleError(ex, "DeleteVehicle", "VEHICLE_DELETION_ERROR");
             }
         }
     }

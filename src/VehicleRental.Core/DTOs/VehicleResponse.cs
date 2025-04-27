@@ -11,7 +11,7 @@ namespace VehicleRental.Core.DTOs
         public int Year { get; set; }
         public decimal PricePerKmInEuro { get; set; }
         public decimal PricePerDayInEuro { get; set; }
-        public decimal TotalDistanceDriven { get; set; }
+        public decimal TotalRentalDistanceDriven { get; set; }
         public int TotalRentalCount { get; set; }
         public decimal TotalRentalIncome { get; set; }
 
@@ -26,7 +26,7 @@ namespace VehicleRental.Core.DTOs
                 Year = vehicle.Year,
                 PricePerKmInEuro = vehicle.PricePerKmInEuro,
                 PricePerDayInEuro = vehicle.PricePerDayInEuro,
-                TotalDistanceDriven = vehicle.Rentals.Sum(r => r.TotalDistance),
+                TotalRentalDistanceDriven = vehicle.Rentals.Sum(r => r.TotalDistance),
                 TotalRentalCount = vehicle.Rentals.Count,
                 TotalRentalIncome = vehicle.Rentals.Sum(r => r.TotalCost)
             };

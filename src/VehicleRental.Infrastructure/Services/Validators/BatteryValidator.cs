@@ -9,14 +9,14 @@ namespace VehicleRental.Infrastructure.Services.Validators
     {
         public bool CanValidate(string telemetryType) => telemetryType.ToLower() == "battery_soc";
 
-        public async Task<(bool IsValid, string Message)> ValidateAsync(TelemetryRequest request, VehicleRentalDbContext context)
+        public Task<(bool IsValid, string Message)> ValidateAsync(TelemetryRequest request, VehicleRentalDbContext context)
         {
             if (request.Value < 0 || request.Value > 100)
             {
-                return (false, "Battery level must be between 0 and 100 percent");
+                return Task.FromResult((false, "Battery level must be between 0 and 100 percent"));
             }
 
-            return (true, "Valid");
+            return Task.FromResult((true, "Valid"));
         }
     }
 }

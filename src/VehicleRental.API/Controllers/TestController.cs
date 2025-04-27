@@ -6,15 +6,13 @@ namespace VehicleRental.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class TestController : ControllerBase
+public class TestController : BaseController
 {
     private readonly VehicleRentalDbContext _context;
-    private readonly ILogger<TestController> _logger;
 
-    public TestController(VehicleRentalDbContext context, ILogger<TestController> logger)
+    public TestController(VehicleRentalDbContext context, ILogger<TestController> logger) : base(logger)
     {
         _context = context;
-        _logger = logger;
     }
 
     [HttpGet("connection")]
@@ -44,12 +42,7 @@ public class TestController : ControllerBase
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error connecting to database");
-            return StatusCode(500, new {
-                Error = ex.Message,
-                StackTrace = ex.StackTrace,
-                InnerException = ex.InnerException?.Message
-            });
+            return HandleError(ex, "TestConnection", "DATABASE_CONNECTION_ERROR");
         }
     }
 }

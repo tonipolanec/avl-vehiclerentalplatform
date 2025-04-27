@@ -9,12 +9,10 @@ namespace VehicleRental.API.Controllers
     public class RentalsController : BaseController
     {
         private readonly IRentalService _rentalService;
-        private readonly ILogger<RentalsController> _logger;
 
-        public RentalsController(IRentalService rentalService, ILogger<RentalsController> logger)
+        public RentalsController(IRentalService rentalService, ILogger<RentalsController> logger) : base(logger)
         {
             _rentalService = rentalService;
-            _logger = logger;
         }
 
         [HttpPost]
@@ -23,11 +21,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var rental = await _rentalService.CreateRentalAsync(request);
+                _logger.LogInformation("Rental created: {RentalId}", rental.Id);
                 return CreatedAtAction(nameof(GetRental), new { id = rental.Id }, rental);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error creating rental");
                 return HandleError<RentalAllDetailsResponse>(ex, "CreateRental", "RENTAL_CREATION_ERROR");
             }
         }
@@ -38,11 +36,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var rental = await _rentalService.GetRentalByIdAsync(id);
+                _logger.LogInformation("Rental retrieved: {RentalId}", rental.Id);
                 return Ok(rental);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving rental {RentalId}", id);
                 return HandleError<RentalAllDetailsResponse>(ex, "GetRental", "RENTAL_RETRIEVAL_ERROR");
             }
         }
@@ -53,11 +51,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var rentals = await _rentalService.GetAllRentalsAsync();
+                _logger.LogInformation("All rentals retrieved: {RentalCount}", rentals.Count());
                 return Ok(rentals);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving all rentals");
                 return HandleError<IEnumerable<RentalBasicDetailsResponse>>(ex, "GetAllRentals", "RENTALS_RETRIEVAL_ERROR");
             }
         }
@@ -68,11 +66,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var rental = await _rentalService.UpdateRentalAsync(id, request);
+                _logger.LogInformation("Rental updated: {RentalId}", rental.Id);
                 return Ok(rental);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating rental {RentalId}", id);
                 return HandleError<RentalAllDetailsResponse>(ex, "UpdateRental", "RENTAL_UPDATE_ERROR");
             }
         }
@@ -83,11 +81,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 await _rentalService.CancelRentalAsync(id);
+                _logger.LogInformation("Rental cancelled: {RentalId}", id);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error cancelling rental {RentalId}", id);
                 return HandleError(ex, "CancelRental", "RENTAL_CANCELLATION_ERROR");
             }
         }
@@ -98,11 +96,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var rental = await _rentalService.FinishRentalAsync(id);
+                _logger.LogInformation("Rental completed: {RentalId}", id);
                 return Ok(rental);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error finishing rental {RentalId}", id);
                 return HandleError<RentalAllDetailsResponse>(ex, "FinishRental", "RENTAL_FINISH_ERROR");
             }
         }

@@ -1,10 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleRental.Core.DTOs;
+using Microsoft.Extensions.Logging;
 
 namespace VehicleRental.API.Controllers
 {
     public class BaseController : ControllerBase
     {
+        protected readonly ILogger<BaseController> _logger;
+
+        protected BaseController(ILogger<BaseController> logger)
+        {
+            _logger = logger;
+        }
+
         protected ActionResult<T> HandleError<T>(Exception ex, string context, string errorCode)
         {
             return HandleError(ex, context, errorCode ?? "UNKNOWN");
@@ -15,6 +23,7 @@ namespace VehicleRental.API.Controllers
             switch (ex)
             {
                 case KeyNotFoundException:
+                    _logger.LogError(ex, "Resource not found: {Message}", ex.Message);
                     return NotFound(new ErrorResponse(
                         "The requested resource was not found.",
                         "RESOURCE_NOT_FOUND",
@@ -22,6 +31,7 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 case InvalidOperationException:
+                    _logger.LogError(ex, "Invalid operation: {Message}", ex.Message);
                     return BadRequest(new ErrorResponse(
                         ex.Message,
                         errorCode ?? "INVALID_OPERATION",
@@ -29,6 +39,7 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 case ArgumentException:
+                    _logger.LogError(ex, "Invalid input: {Message}", ex.Message);
                     return BadRequest(new ErrorResponse(
                         "Invalid input provided.",
                         errorCode ?? "INVALID_INPUT",
@@ -36,6 +47,7 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 default:
+                    _logger.LogError(ex, "An unexpected error occurred: {Message}", ex.Message);
                     return StatusCode(500, new ErrorResponse(
                         "An unexpected error occurred.",
                         "INTERNAL_SERVER_ERROR",
@@ -51,6 +63,7 @@ namespace VehicleRental.API.Controllers
 
         protected ActionResult HandleValidationError(string message, List<string> details)
         {
+            _logger.LogError("Validation error: {Message}", message);
             return BadRequest(new ErrorResponse(
                 message,
                 "VALIDATION_ERROR",

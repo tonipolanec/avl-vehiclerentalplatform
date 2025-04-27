@@ -14,16 +14,14 @@ namespace VehicleRental.API.Controllers
     {
         private readonly ITelemetryService _telemetryService;
         private readonly VehicleRentalDbContext _context;
-        private readonly ILogger<TelemetryController> _logger;
 
         public TelemetryController(
             ITelemetryService telemetryService,
             VehicleRentalDbContext context,
-            ILogger<TelemetryController> logger)
+            ILogger<TelemetryController> logger) : base(logger)
         {
             _telemetryService = telemetryService;
             _context = context;
-            _logger = logger;
         }
 
         [HttpPost]
@@ -32,14 +30,16 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var response = await _telemetryService.ProcessTelemetryAsync(request);
-                if (response.Message.Contains("Valid"))
+                if (response.Message.Contains("Valid")){
+                    _logger.LogInformation("Telemetry processed successfully for vehicle {VehicleId}", request.VehicleId);
                     return Ok(response);
-                else
+                } else {
+                    _logger.LogError("Telemetry processing failed for vehicle {VehicleId}", request.VehicleId);
                     return BadRequest(response);
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error processing telemetry for vehicle {VehicleId}", request.VehicleId);
                 return HandleError(ex, "ProcessTelemetry", "TELEMETRY_PROCESSING_ERROR");
             }
         }
@@ -50,11 +50,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var currentOdometer = await _telemetryService.GetCurrentOdometerAsync(vehicleId);
+                _logger.LogInformation("Current odometer retrieved for vehicle {VehicleId}", vehicleId);
                 return Ok(currentOdometer);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving odometer for vehicle {VehicleId}", vehicleId);
                 return HandleError<TelemetryResponse>(ex, "GetCurrentOdometer", "ODOMETER_RETRIEVAL_ERROR");
             }
         }
@@ -65,11 +65,11 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var currentBattery = await _telemetryService.GetCurrentBatteryAsync(vehicleId);
+                _logger.LogInformation("Current battery retrieved for vehicle {VehicleId}", vehicleId);
                 return Ok(currentBattery);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving battery SOC for vehicle {VehicleId}", vehicleId);
                 return HandleError<TelemetryResponse>(ex, "GetCurrentBatterySoc", "BATTERY_RETRIEVAL_ERROR");
             }
         }
@@ -117,7 +117,6 @@ namespace VehicleRental.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving odometer history for vehicle {VehicleId}", vehicleId);
                 return HandleError<IEnumerable<TelemetryResponse>>(ex, "GetOdometerHistory", "ODOMETER_HISTORY_RETRIEVAL_ERROR");
             }
         }

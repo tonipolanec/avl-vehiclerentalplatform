@@ -193,5 +193,79 @@ namespace VehicleRental.UnitTests
             Assert.True(savedTelemetry.IsValid);
             Assert.Equal(85, savedTelemetry.Value);
         }
+
+        [Fact]
+        public async Task ProcessTelemetry_WithBatteryLevelBelowZero_ShouldMarkAsInvalid()
+        {
+            // Arrange
+            var testVehicle = createTestVehicle();
+            var batterySocTelemetryType = createBatterySocTelemetryType();
+
+            await _context.Vehicles.AddAsync(testVehicle);
+            await _context.TelemetryTypes.AddAsync(batterySocTelemetryType);
+
+            await _context.SaveChangesAsync();
+
+            var validators = createValidators();
+            var telemetryService = new TelemetryService(_context, _loggerMock.Object, validators);
+
+            // Act
+            var telemetryRequest = new TelemetryRequest
+            {
+                VehicleId = testVehicle.Id,
+                TelemetryTypeId = batterySocTelemetryType.Id,
+                Value = -1, // Invalid negative value
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+            };
+
+            await telemetryService.ProcessTelemetryAsync(telemetryRequest);
+
+            // Assert
+            var savedTelemetry = await _context.Telemetry
+                .FirstOrDefaultAsync(t => t.VehicleId == testVehicle.Id &&
+                                        t.TelemetryTypeId == batterySocTelemetryType.Id &&
+                                        t.Value == -1);
+
+            Assert.NotNull(savedTelemetry);
+            Assert.False(savedTelemetry.IsValid);
+            Assert.Contains("battery", savedTelemetry.ValidationMessage.ToLower());
+        }
+
+        [Fact]
+        public async Task ProcessTelemetry_WithBatteryLevelAbove100_ShouldMarkAsInvalid()
+        {
+            // Arrange
+            var testVehicle = createTestVehicle();
+            var batterySocTelemetryType = createBatterySocTelemetryType();
+
+            await _context.Vehicles.AddAsync(testVehicle);
+            await _context.TelemetryTypes.AddAsync(batterySocTelemetryType);
+
+            await _context.SaveChangesAsync();
+
+            var validators = createValidators();
+            var telemetryService = new TelemetryService(_context, _loggerMock.Object, validators);
+
+            // Act
+            var telemetryRequest = new TelemetryRequest
+            {
+                VehicleId = testVehicle.Id,
+                TelemetryTypeId = batterySocTelemetryType.Id,
+                Value = 101, // Invalid value above 100%
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+            };
+
+            await telemetryService.ProcessTelemetryAsync(telemetryRequest);
+
+            // Assert
+            var savedTelemetry = await _context.Telemetry
+                .FirstOrDefaultAsync(t => t.VehicleId == testVehicle.Id &&
+                                        t.TelemetryTypeId == batterySocTelemetryType.Id &&
+                                        t.Value == 101);
+
+            Assert.NotNull(savedTelemetry);
+            Assert.False(savedTelemetry.IsValid);
+            Assert.Contains("battery", savedTelemetry.ValidationMessage.ToLower());
+        }
     }
 }

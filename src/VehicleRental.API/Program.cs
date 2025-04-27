@@ -10,8 +10,17 @@ using VehicleRental.Infrastructure.Services.Validators;
 using VehicleRental.Infrastructure.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole(options =>
+{
+    options.FormatterName = "simple";
+});
+builder.Logging.SetMinimumLevel(LogLevel.Information);
+
+
+
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddEndpointsApiExplorer();
@@ -40,6 +49,7 @@ builder.Services.AddScoped<IPricingCalculator, PricingCalculator>();
 builder.Services.AddScoped<ITelemetryService, TelemetryService>();
 builder.Services.AddScoped<ITelemetryValidator, OdometerValidator>();
 builder.Services.AddScoped<ITelemetryValidator, BatteryValidator>();
+builder.Services.AddScoped<IRentalValidator, RentalValidator>();
 
 var app = builder.Build();
 

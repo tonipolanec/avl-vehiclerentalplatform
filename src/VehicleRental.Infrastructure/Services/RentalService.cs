@@ -6,6 +6,7 @@ using VehicleRental.Core.Entities.Enums;
 using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Helpers;
+using VehicleRental.Infrastructure.Interfaces;
 
 namespace VehicleRental.Infrastructure.Services
 {
@@ -14,43 +15,35 @@ namespace VehicleRental.Infrastructure.Services
         private readonly VehicleRentalDbContext _context;
         private readonly ILogger<RentalService> _logger;
         private readonly IPricingCalculator _pricingCalculator;
+        private readonly IRentalValidator _rentalValidator;
 
         public RentalService(
             VehicleRentalDbContext context,
             ILogger<RentalService> logger,
-            IPricingCalculator pricingCalculator)
+            IPricingCalculator pricingCalculator,
+            IRentalValidator rentalValidator)
         {
             _context = context;
             _logger = logger;
             _pricingCalculator = pricingCalculator;
+            _rentalValidator = rentalValidator;
         }
 
         public async Task<RentalAllDetailsResponse> CreateRentalAsync(CreateRentalRequest request)
         {
-            var startDate = DateTimeOffset.FromUnixTimeSeconds(request.StartDate).UtcDateTime;
-            var endDate = DateTimeOffset.FromUnixTimeSeconds(request.EndDate).UtcDateTime;
-
-            // Check for overlapping rentals
-            var hasOverlap = await _context.Rentals
-                .AnyAsync(r => r.VehicleId == request.VehicleId &&
-                              r.Status != RentalStatus.Cancelled &&
-                              ((r.StartDate <= endDate && r.EndDate >= startDate) ||
-                               (startDate <= r.EndDate && endDate >= r.StartDate)));
-
-            if (hasOverlap)
-                throw new InvalidOperationException("Vehicle is already rented during the requested period");
-
+            var (notOverlapping, message) = await _rentalValidator.ValidateAsync(request, _context);
+            if (!notOverlapping)
+                throw new InvalidOperationException(message);
 
             var customer = await FetchHelpers.GetCustomerByIdAsync(_context, request.CustomerId);
             var vehicle = await FetchHelpers.GetVehicleByIdAsync(_context, request.VehicleId);
-
 
             var rental = new Rental
             {
                 CustomerId = request.CustomerId,
                 VehicleId = request.VehicleId,
-                StartDate = startDate,
-                EndDate = endDate,
+                StartDate = DateTimeOffset.FromUnixTimeSeconds(request.StartDate).UtcDateTime,
+                EndDate = DateTimeOffset.FromUnixTimeSeconds(request.EndDate).UtcDateTime,
                 Status = RentalStatus.Ordered,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
@@ -85,32 +78,18 @@ namespace VehicleRental.Infrastructure.Services
 
         public async Task<RentalAllDetailsResponse> UpdateRentalAsync(int id, UpdateRentalDatesRequest request)
         {
+            var (notOverlapping, message) = await _rentalValidator.ValidateUpdateAsync(id, request, _context);
+            if (!notOverlapping)
+                throw new InvalidOperationException(message);
+
             var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
 
-            if (rental.Status == RentalStatus.Cancelled)
-                throw new InvalidOperationException("Cannot update a cancelled rental");
-
-            var newStartDate = request.StartDate.HasValue
+            rental.StartDate = request.StartDate.HasValue
                 ? DateTimeOffset.FromUnixTimeSeconds(request.StartDate.Value).UtcDateTime
                 : rental.StartDate;
-            var newEndDate = request.EndDate.HasValue
+            rental.EndDate = request.EndDate.HasValue
                 ? DateTimeOffset.FromUnixTimeSeconds(request.EndDate.Value).UtcDateTime
                 : rental.EndDate;
-
-
-            // Check for overlapping rentals excluding the current rental
-            var hasOverlap = await _context.Rentals
-                .AnyAsync(r => r.Id != id &&
-                              r.Status != RentalStatus.Cancelled &&
-                              ((r.StartDate <= newEndDate && r.EndDate >= newStartDate) ||
-                               (newStartDate <= r.EndDate && newEndDate >= r.StartDate)));
-
-            if (hasOverlap)
-                throw new InvalidOperationException("Vehicle is already rented during the requested period");
-
-
-            rental.StartDate = newStartDate;
-            rental.EndDate = newEndDate;
             rental.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
@@ -119,7 +98,6 @@ namespace VehicleRental.Infrastructure.Services
 
             return await GetRentalByIdAsync(rental.Id);
         }
-
 
         public async Task CancelRentalAsync(int id)
         {
@@ -135,7 +113,6 @@ namespace VehicleRental.Infrastructure.Services
 
             _logger.LogInformation("Cancelled rental with ID {RentalId}", rental.Id);
         }
-
 
         public async Task<RentalAllDetailsResponse> FinishRentalAsync(int id)
         {
@@ -155,15 +132,12 @@ namespace VehicleRental.Infrastructure.Services
             var batteryReadingRentalStart = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, batteryTelemetry.Id, rental.StartDate, true);
             var batteryReadingRentalEnd = await FetchHelpers.GetTelemetryReadingsForRentalStartEndAsync(_context, rental.VehicleId, batteryTelemetry.Id, rental.EndDate, false);
 
-
             rental.InitialOdometerReading = odometerReadingRentalStart.Value;
             rental.FinalOdometerReading = odometerReadingRentalEnd.Value;
             rental.InitialBatteryLevel = batteryReadingRentalStart.Value;
             rental.FinalBatteryLevel = batteryReadingRentalEnd.Value;
 
-
             var numberOfDays = (int)Math.Ceiling((rental.EndDate - rental.StartDate).TotalDays);
-
 
             var totalCost = _pricingCalculator.CalculateRentalPrice(
                 totalKilometers: rental.TotalDistance,
