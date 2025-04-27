@@ -32,8 +32,6 @@ namespace VehicleRental.Infrastructure.Services
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Created new customer {CustomerName} with ID {CustomerId}", customer.Name, customer.Id);
-
             return await GetCustomerByIdAsync(customer.Id);
         }
 
@@ -75,8 +73,6 @@ namespace VehicleRental.Infrastructure.Services
 
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Updated customer {CustomerName} with ID {CustomerId}", customer.Name, customer.Id);
-
             return await GetCustomerByIdAsync(customer.Id);
         }
 
@@ -95,8 +91,6 @@ namespace VehicleRental.Infrastructure.Services
 
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Updated customer status for customer {CustomerId} to {IsActive}", id, request.IsActive);
-
             return await GetCustomerByIdAsync(customer.Id);
         }
 
@@ -112,8 +106,6 @@ namespace VehicleRental.Infrastructure.Services
 
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
-
-            _logger.LogInformation("Deleted customer with ID {CustomerId}", id);
         }
     }
 }

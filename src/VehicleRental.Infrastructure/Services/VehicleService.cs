@@ -63,7 +63,6 @@ namespace VehicleRental.Infrastructure.Services
             _context.Vehicles.Add(vehicle);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Created vehicle with ID {VehicleId}", vehicle.Id);
             return VehicleResponse.FromEntity(vehicle);
         }
 
@@ -73,8 +72,6 @@ namespace VehicleRental.Infrastructure.Services
 
             _context.Vehicles.Remove(vehicle);
             await _context.SaveChangesAsync();
-
-            _logger.LogInformation("Deleted vehicle with ID {VehicleId}", id);
         }
     }
 }

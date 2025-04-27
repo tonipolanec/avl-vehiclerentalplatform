@@ -1,0 +1,1142 @@
+2025-04-27 21:12:38.296 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:13:01.773 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:13:02.796 +02:00 [INF] Current odometer retrieved for vehicle 1
+2025-04-27 21:13:03.180 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.183 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.245 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.247 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.277 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.279 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.290 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.292 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.300 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.301 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.324 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.326 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.333 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.335 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.357 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.359 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.381 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.382 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.392 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.393 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.403 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.405 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.428 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.430 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.438 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.439 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.449 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.450 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.461 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.462 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.490 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.492 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.501 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.502 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.512 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.513 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.521 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.523 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.546 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.548 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.559 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.561 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.571 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.572 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.582 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.583 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.605 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.607 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.618 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.620 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.629 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.630 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.638 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.640 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.650 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.650 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.659 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.661 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.681 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.682 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:13:03.692 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.694 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.701 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.702 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.712 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.713 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.734 +02:00 [INF] Processed telemetry for vehicle 3
+2025-04-27 21:13:03.736 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:13:03.744 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.745 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.754 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.755 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.765 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.766 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.777 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.777 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.785 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.787 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.795 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.797 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.804 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.806 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.814 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.815 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.822 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.823 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.830 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.831 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.840 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.841 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.848 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.849 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.859 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.861 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.869 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.871 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.882 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.883 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.891 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.892 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.900 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.902 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.911 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.913 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.921 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.923 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.931 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.933 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.941 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.943 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.952 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.953 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.963 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.965 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.973 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.975 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:03.981 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:03.982 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:03.992 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:03.994 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.000 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.002 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.028 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.030 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.040 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.042 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.049 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.051 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.060 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.061 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.070 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.071 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.079 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.081 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.089 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.091 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.098 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.099 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.108 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.110 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.118 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.120 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.129 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.131 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.141 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.143 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.151 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.152 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:13:04.160 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:13:04.161 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:13:04.168 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:13:04.169 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:14:53.903 +02:00 [INF] All customers retrieved: 4
+2025-04-27 21:15:00.965 +02:00 [INF] Processed telemetry for vehicle 1
+2025-04-27 21:15:00.968 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:15:00.976 +02:00 [INF] Processed telemetry for vehicle 2
+2025-04-27 21:15:00.978 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:15:01.723 +02:00 [INF] All vehicles retrieved: 4
+2025-04-27 21:15:09.473 +02:00 [INF] Vehicle retrieved: 2
+2025-04-27 21:16:57.297 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:18:24.904 +02:00 [INF] --------------------------------
+2025-04-27 21:18:24.944 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:18:24.945 +02:00 [INF] --------------------------------
+2025-04-27 21:20:00.126 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:20:01.361 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:20:01.412 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:24:53.921 +02:00 [INF] --------------------------------
+2025-04-27 21:24:53.957 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:24:53.959 +02:00 [INF] --------------------------------
+2025-04-27 21:25:00.817 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:25:01.981 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 21:25:02.027 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 21:25:26.747 +02:00 [ERR] Invalid input: Value cannot be null. (Parameter 'source')
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   at VehicleRental.Core.DTOs.VehicleResponse.FromEntity(Vehicle vehicle) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Core\DTOs\VehicleResponse.cs:line 21
+   at VehicleRental.Infrastructure.Services.VehicleService.GetVehicleByIdAsync(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\VehicleService.cs:line 33
+   at VehicleRental.API.Controllers.VehiclesController.GetVehicle(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\VehiclesController.cs:line 23
+2025-04-27 21:25:40.444 +02:00 [ERR] Resource not found: Vehicle with ID 22 not found
+System.Collections.Generic.KeyNotFoundException: Vehicle with ID 22 not found
+   at VehicleRental.Infrastructure.Services.VehicleService.GetVehicleByIdAsync(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\VehicleService.cs:line 30
+   at VehicleRental.API.Controllers.VehiclesController.GetVehicle(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\VehiclesController.cs:line 23
+2025-04-27 21:25:44.264 +02:00 [ERR] Invalid input: Value cannot be null. (Parameter 'source')
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   at VehicleRental.Core.DTOs.VehicleResponse.FromEntity(Vehicle vehicle) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Core\DTOs\VehicleResponse.cs:line 21
+   at VehicleRental.Infrastructure.Services.VehicleService.GetVehicleByIdAsync(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\VehicleService.cs:line 33
+   at VehicleRental.API.Controllers.VehiclesController.GetVehicle(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\VehiclesController.cs:line 23
+2025-04-27 21:36:25.459 +02:00 [INF] --------------------------------
+2025-04-27 21:36:25.497 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:36:25.498 +02:00 [INF] --------------------------------
+2025-04-27 21:36:42.612 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:36:43.592 +02:00 [ERR] Failed executing DbCommand (36ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v0."Id", v0."CreatedAt", v0."Make", v0."Model", v0."OdometerReading", v0."PricePerDayInEuro", v0."PricePerKmInEuro", v0."UpdatedAt", v0."VIN", v0."Year", r."Id", r."CreatedAt", r."CustomerId", r."EndDate", r."FinalBatteryLevel", r."FinalOdometerReading", r."InitialBatteryLevel", r."InitialOdometerReading", r."StartDate", r."Status", r."TotalCost", r."UpdatedAt", r."VehicleId"
+FROM (
+    SELECT v."Id", v."CreatedAt", v."Make", v."Model", v."OdometerReading", v."PricePerDayInEuro", v."PricePerKmInEuro", v."UpdatedAt", v."VIN", v."Year"
+    FROM "Vehicles" AS v
+    WHERE v."Id" = @__id_0
+    LIMIT 1
+) AS v0
+LEFT JOIN "Rentals" AS r ON v0."Id" = r."VehicleId"
+ORDER BY v0."Id"
+2025-04-27 21:36:43.619 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'VehicleRental.Infrastructure.Data.VehicleRentalDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column v.OdometerReading does not exist
+
+POSITION: 451
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column v.OdometerReading does not exist
+    Position: 451
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column v.OdometerReading does not exist
+
+POSITION: 451
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column v.OdometerReading does not exist
+    Position: 451
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-04-27 21:36:43.632 +02:00 [ERR] An unexpected error occurred: 42703: column v.OdometerReading does not exist
+
+POSITION: 451
+Npgsql.PostgresException (0x80004005): 42703: column v.OdometerReading does not exist
+
+POSITION: 451
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at VehicleRental.Infrastructure.Services.VehicleService.GetVehicleByIdAsync(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\VehicleService.cs:line 24
+   at VehicleRental.API.Controllers.VehiclesController.GetVehicle(Int32 id) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\VehiclesController.cs:line 23
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column v.OdometerReading does not exist
+    Position: 451
+    File: parse_relation.c
+    Line: 3721
+    Routine: errorMissingColumn
+2025-04-27 21:40:29.884 +02:00 [INF] --------------------------------
+2025-04-27 21:40:29.927 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:40:29.929 +02:00 [INF] --------------------------------
+2025-04-27 21:40:33.104 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:40:34.215 +02:00 [INF] Vehicle retrieved: 3
+2025-04-27 21:40:47.972 +02:00 [INF] Vehicle retrieved: 3
+2025-04-27 21:40:57.433 +02:00 [INF] Vehicle retrieved: 2
+2025-04-27 21:41:00.673 +02:00 [INF] Vehicle retrieved: 1
+2025-04-27 21:45:46.910 +02:00 [INF] Created vehicle with ID 7
+2025-04-27 21:45:46.912 +02:00 [INF] Vehicle created: 7
+2025-04-27 21:53:58.088 +02:00 [INF] --------------------------------
+2025-04-27 21:53:58.123 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 21:53:58.124 +02:00 [INF] --------------------------------
+2025-04-27 21:54:09.750 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 21:54:10.770 +02:00 [INF] Current odometer retrieved for vehicle 1
+2025-04-27 21:54:11.154 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.211 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.270 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.277 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.285 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.306 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.312 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.334 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.354 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.361 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.369 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.389 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.395 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.404 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.412 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.434 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.440 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.448 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.457 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.492 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.501 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.510 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.519 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.541 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.546 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.554 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.561 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.569 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.576 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.600 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 21:54:11.607 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.615 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.624 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.646 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 21:54:11.662 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.671 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.679 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.687 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.694 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.703 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.709 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.718 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.725 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.738 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.746 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.755 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.763 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.771 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.778 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.785 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.791 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.799 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.807 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.814 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.823 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.830 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.839 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.846 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.864 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.871 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.878 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.885 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.892 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.901 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.907 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.914 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.923 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.930 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.939 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.947 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.955 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.961 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.969 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.975 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.982 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.990 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:11.998 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.006 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.012 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.021 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.028 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.036 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.042 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.050 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.056 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.061 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.068 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.074 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.081 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.088 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.095 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:54:12.105 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 52
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 21:55:42.158 +02:00 [INF] All vehicles retrieved: 5
+2025-04-27 22:00:36.190 +02:00 [INF] --------------------------------
+2025-04-27 22:00:36.230 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 22:00:36.231 +02:00 [INF] --------------------------------
+2025-04-27 22:00:43.629 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 22:00:44.873 +02:00 [INF] Current odometer retrieved for vehicle 1
+2025-04-27 22:00:45.046 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.258 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.260 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.273 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.318 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.351 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.371 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.372 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.375 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.380 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.384 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.388 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.392 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.412 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.414 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.417 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.421 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.425 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.444 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.446 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.449 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.470 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.471 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.474 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.480 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.483 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.487 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.491 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.512 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.513 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.515 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.519 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.524 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.529 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.534 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.539 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.543 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.563 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.564 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.567 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.571 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.589 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.596 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.600 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.606 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.610 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.630 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.631 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.635 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.640 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.645 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.649 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.652 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.657 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.663 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.682 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.683 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.688 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.692 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.697 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.702 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.707 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.713 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.720 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.724 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.729 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.734 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.737 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.758 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.759 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:00:45.763 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:00:45.767 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.771 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.775 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.780 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.784 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.788 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:00:45.807 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:00:45.807 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:00:45.819 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.823 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.828 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.832 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.836 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.841 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.846 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.851 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.854 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.858 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.864 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.868 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.871 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.878 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.883 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.887 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.892 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.897 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.902 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:00:45.906 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:00:45.912 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:00:45.917 +02:00 [ERR] An unexpected error occurred: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VehicleRental.Infrastructure.Services.TelemetryService.ProcessTelemetryAsync(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.Infrastructure\Services\TelemetryService.cs:line 63
+   at VehicleRental.API.Controllers.TelemetryController.ProcessTelemetry(TelemetryRequest request) in D:\Programming\AVL backend task\avl-vehiclerentalplatform\src\VehicleRental.API\Controllers\TelemetryController.cs:line 32
+2025-04-27 22:04:18.509 +02:00 [INF] --------------------------------
+2025-04-27 22:04:18.549 +02:00 [INF] Starting Vehicle Rental API
+2025-04-27 22:04:18.550 +02:00 [INF] --------------------------------
+2025-04-27 22:04:24.150 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-04-27 22:04:25.226 +02:00 [INF] Current odometer retrieved for vehicle 1
+2025-04-27 22:04:25.396 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.603 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.606 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.619 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.666 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.668 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.679 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.700 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.701 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.704 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.711 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.712 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.716 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.721 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.722 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.725 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.745 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.745 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.749 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.755 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.756 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.759 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.779 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.781 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.784 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.802 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.803 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.806 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:25.813 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:25.814 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:25.817 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.823 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.824 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.828 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.850 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.851 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.854 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.877 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.879 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.883 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:25.891 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:25.892 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:25.896 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:25.903 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:25.904 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:25.907 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.928 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.930 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.933 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.940 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.941 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:25.944 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:25.951 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:25.952 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:25.955 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:25.963 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:25.964 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:25.967 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:25.987 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:25.988 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:25.991 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:25.999 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.001 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:26.004 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.012 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.013 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.016 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.022 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.024 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.027 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:26.048 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.050 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:26.053 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.060 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.062 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.065 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:26.072 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.074 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:26.076 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.084 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.085 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.087 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.095 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.096 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.099 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:26.104 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.105 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:26.108 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:26.127 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.129 +02:00 [ERR] Telemetry processing failed for vehicle 3
+2025-04-27 22:04:26.132 +02:00 [INF] Processing telemetry for vehicle 3 and type 2
+2025-04-27 22:04:26.138 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.138 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:26.141 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.149 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.150 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.152 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.159 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.159 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.163 +02:00 [INF] Processing telemetry for vehicle 3 and type 1
+2025-04-27 22:04:26.183 +02:00 [INF] Successfully processed telemetry for vehicle 3
+2025-04-27 22:04:26.184 +02:00 [INF] Telemetry processed successfully for vehicle 3
+2025-04-27 22:04:26.187 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.193 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.194 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.197 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.203 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.204 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.207 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.215 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.216 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.219 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.225 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.227 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.230 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.237 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.238 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.241 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.248 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.249 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.252 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.259 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.260 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.264 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.270 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.271 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.274 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.282 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.283 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.286 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.292 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.294 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.297 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.304 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.305 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.307 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.314 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.316 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.319 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.325 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.326 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.330 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.337 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.338 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.341 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.348 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.349 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.352 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.359 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.361 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.364 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.370 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.371 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.373 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.381 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.382 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.385 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.391 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.392 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.396 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.403 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.403 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.406 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.414 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.415 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.417 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.424 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.426 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.430 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.436 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.437 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.440 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.448 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.449 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.451 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.458 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.458 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.462 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.468 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.469 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.472 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.478 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.480 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.482 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.489 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.490 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.493 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.499 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.500 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.520 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.527 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.528 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.531 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.538 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.539 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.541 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.547 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.549 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.552 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.557 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.558 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.562 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.568 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.570 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.572 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.578 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.579 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.581 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.587 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.588 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.590 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.596 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.597 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.600 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.605 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.606 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.609 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.615 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.616 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.618 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.624 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.625 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.630 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.635 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.636 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.638 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.646 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.647 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.649 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.654 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.656 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.661 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.667 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.668 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.671 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.678 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.679 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.682 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.688 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.689 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.692 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.699 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.699 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.702 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.710 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.711 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.713 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.719 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.721 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.724 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.732 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.733 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.736 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.743 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.745 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.748 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.754 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.755 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.758 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.765 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.767 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.769 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.775 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.777 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.780 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.786 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.788 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.791 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.798 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.798 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.801 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.807 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.808 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.811 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.817 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.819 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.822 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.829 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.830 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:04:26.832 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.838 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.839 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.842 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:04:26.849 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:04:26.851 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:04:26.853 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:04:26.860 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:04:26.861 +02:00 [INF] Telemetry processed successfully for vehicle 1
+2025-04-27 22:05:00.256 +02:00 [INF] Processing telemetry for vehicle 2 and type 2
+2025-04-27 22:05:00.269 +02:00 [INF] Successfully processed telemetry for vehicle 2
+2025-04-27 22:05:00.270 +02:00 [INF] Telemetry processed successfully for vehicle 2
+2025-04-27 22:05:00.273 +02:00 [INF] Processing telemetry for vehicle 1 and type 2
+2025-04-27 22:05:00.278 +02:00 [INF] Successfully processed telemetry for vehicle 1
+2025-04-27 22:05:00.279 +02:00 [INF] Telemetry processed successfully for vehicle 1

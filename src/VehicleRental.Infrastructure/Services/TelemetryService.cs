@@ -20,9 +20,9 @@ namespace VehicleRental.Infrastructure.Services
             ILogger<TelemetryService> logger,
             IEnumerable<ITelemetryValidator> validators)
         {
-            _context = context;
-            _logger = logger;
-            _validators = validators;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _validators = validators ?? throw new ArgumentNullException(nameof(validators));
         }
 
         public async Task<TelemetryHandshakeResponse> ProcessTelemetryAsync(TelemetryRequest request)
@@ -46,12 +46,12 @@ namespace VehicleRental.Infrastructure.Services
                 Vehicle = vehicle,
                 TelemetryType = telemetryType
             };
-
             telemetry.ProcessedAt = DateTime.UtcNow;
+
+            // vehicle.TelemetryReadings.Add(telemetry);
+
             await _context.Telemetry.AddAsync(telemetry);
             await _context.SaveChangesAsync();
-
-            _logger.LogInformation("Processed telemetry for vehicle {VehicleId}", telemetry.VehicleId);
 
             return TelemetryHandshakeResponse.FromEntity(telemetry);
         }

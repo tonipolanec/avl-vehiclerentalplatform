@@ -51,10 +51,11 @@ namespace VehicleRental.Infrastructure.Services
                 Vehicle = vehicle
             };
 
+            //vehicle.Rentals.Add(rental);
+
             await _context.Rentals.AddAsync(rental);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Created new rental with ID {RentalId}", rental.Id);
 
             return await GetRentalByIdAsync(rental.Id);
         }
@@ -94,8 +95,6 @@ namespace VehicleRental.Infrastructure.Services
 
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Updated rental with ID {RentalId}", rental.Id);
-
             return await GetRentalByIdAsync(rental.Id);
         }
 
@@ -111,7 +110,6 @@ namespace VehicleRental.Infrastructure.Services
 
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Cancelled rental with ID {RentalId}", rental.Id);
         }
 
         public async Task<RentalAllDetailsResponse> FinishRentalAsync(int id)
@@ -152,8 +150,6 @@ namespace VehicleRental.Infrastructure.Services
             rental.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
-
-            _logger.LogInformation("Finished rental with ID {RentalId}", rental.Id);
 
             return await GetRentalByIdAsync(rental.Id);
         }
