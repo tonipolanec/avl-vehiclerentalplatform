@@ -1,4 +1,3 @@
-using VehicleRental.Core.Entities;
 
 namespace VehicleRental.Application.Services
 {

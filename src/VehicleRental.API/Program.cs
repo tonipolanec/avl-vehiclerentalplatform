@@ -1,11 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using VehicleRental.Application.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Services;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Microsoft.AspNetCore.Routing;
 using VehicleRental.Infrastructure.Services.Validators;
 using VehicleRental.Infrastructure.Interfaces;
 using Serilog;

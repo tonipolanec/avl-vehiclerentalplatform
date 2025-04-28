@@ -1,7 +1,6 @@
 using VehicleRental.Application.DTOs;
 using VehicleRental.Infrastructure.Interfaces;
 using VehicleRental.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace VehicleRental.Infrastructure.Services.Validators
 {

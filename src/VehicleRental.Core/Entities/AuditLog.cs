@@ -1,4 +1,3 @@
-using System;
 using System.Text.Json;
 
 namespace VehicleRental.Core.Entities
@@ -13,7 +12,6 @@ namespace VehicleRental.Core.Entities
         public string? NewValues { get; set; }
         public DateTime Timestamp { get; set; }
 
-        // Helper methods for JSON conversion
         public T? GetOldValues<T>() where T : class
         {
             return string.IsNullOrEmpty(OldValues) ? null : JsonSerializer.Deserialize<T>(OldValues);

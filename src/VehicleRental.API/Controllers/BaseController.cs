@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleRental.Application.DTOs;
-using Microsoft.Extensions.Logging;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
 

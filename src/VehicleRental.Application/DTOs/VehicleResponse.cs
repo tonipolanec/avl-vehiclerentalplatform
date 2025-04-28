@@ -1,5 +1,4 @@
 using VehicleRental.Core.Entities;
-using System.Linq;
 
 namespace VehicleRental.Application.DTOs
 {

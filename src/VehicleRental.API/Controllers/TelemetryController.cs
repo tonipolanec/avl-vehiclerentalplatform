@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using VehicleRental.Application.DTOs;
 using VehicleRental.Application.Services;
-using VehicleRental.Core.Entities;
 using VehicleRental.Infrastructure.Data;
-using VehicleRental.Infrastructure.Helpers;
-using Microsoft.AspNetCore.Authorization;
 
 namespace VehicleRental.API.Controllers
 {

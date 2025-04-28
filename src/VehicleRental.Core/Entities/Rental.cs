@@ -1,4 +1,3 @@
-using System;
 using VehicleRental.Core.Entities.Enums;
 
 namespace VehicleRental.Core.Entities

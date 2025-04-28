@@ -1,7 +1,5 @@
-using System;
 using Xunit;
 using VehicleRental.Core.Entities;
-using VehicleRental.Application.Services;
 using VehicleRental.Infrastructure.Services;
 using VehicleRental.Infrastructure.Services.Validators;
 using VehicleRental.Infrastructure.Interfaces;
@@ -9,7 +7,6 @@ using Moq;
 using VehicleRental.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 using VehicleRental.Application.DTOs;
 
 namespace VehicleRental.UnitTests

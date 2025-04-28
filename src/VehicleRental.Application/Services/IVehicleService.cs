@@ -1,5 +1,4 @@
 using VehicleRental.Application.DTOs;
-using VehicleRental.Core.Entities;
 
 namespace VehicleRental.Application.Services
 {
