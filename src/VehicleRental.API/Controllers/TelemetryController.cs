@@ -25,7 +25,7 @@ namespace VehicleRental.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TelemetryHandshakeResponse>> ProcessTelemetry([FromBody] TelemetryRequest request)
+        public async Task<ActionResult<TelemetryConfirmationResponse>> ProcessTelemetry([FromBody] TelemetryRequest request)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var currentOdometer = await _telemetryService.GetCurrentOdometerAsync(vehicleId);
-                _logger.LogInformation("Current odometer retrieved for vehicle {VehicleId}", vehicleId);
+                _logger.LogInformation("Current odometer retrieved for vehicle with id {VehicleId}", vehicleId);
                 return Ok(currentOdometer);
             }
             catch (Exception ex)
@@ -65,7 +65,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var currentBattery = await _telemetryService.GetCurrentBatteryAsync(vehicleId);
-                _logger.LogInformation("Current battery retrieved for vehicle {VehicleId}", vehicleId);
+                _logger.LogInformation("Current battery retrieved for vehicle with id {VehicleId}", vehicleId);
                 return Ok(currentBattery);
             }
             catch (Exception ex)

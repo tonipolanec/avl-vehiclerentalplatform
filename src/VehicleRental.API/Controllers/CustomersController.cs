@@ -21,7 +21,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var customer = await _customerService.CreateCustomerAsync(request);
-                _logger.LogInformation("Customer created: {CustomerId}", customer.Id);
+                _logger.LogInformation("Customer created with id {CustomerId}", customer.Id);
                 return CreatedAtAction(nameof(GetCustomer), new { id = customer.Id }, customer);
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var customer = await _customerService.GetCustomerByIdAsync(id);
-                _logger.LogInformation("Customer retrieved: {CustomerId}", customer.Id);
+                _logger.LogInformation("Customer retrieved with id {CustomerId}", customer.Id);
                 return Ok(customer);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var customers = await _customerService.GetAllCustomersAsync();
-                _logger.LogInformation("All customers retrieved: {CustomerCount}", customers.Count());
+                _logger.LogInformation("All customers retrieved with count {CustomerCount}", customers.Count());
                 return Ok(customers);
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var customer = await _customerService.UpdateCustomerNameAsync(id, request);
-                _logger.LogInformation("Customer updated: {CustomerId}", customer.Id);
+                _logger.LogInformation("Customer updated with id {CustomerId}", customer.Id);
                 return Ok(customer);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var customer = await _customerService.UpdateCustomerStatusAsync(id, request);
-                _logger.LogInformation("Customer status updated: {CustomerId}", customer.Id);
+                _logger.LogInformation("Customer status updated with id {CustomerId}", customer.Id);
                 return Ok(customer);
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 await _customerService.DeleteCustomerAsync(id);
-                _logger.LogInformation("Customer deleted: {CustomerId}", id);
+                _logger.LogInformation("Customer deleted with id {CustomerId}", id);
                 return NoContent();
             }
             catch (Exception ex)

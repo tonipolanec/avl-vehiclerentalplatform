@@ -21,7 +21,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
-                _logger.LogInformation("Vehicle retrieved: {VehicleId}", id);
+                _logger.LogInformation("Vehicle retrieved with id {VehicleId}", id);
                 return Ok(vehicle);
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var vehicles = await _vehicleService.GetAllVehiclesAsync();
-                _logger.LogInformation("All vehicles retrieved: {VehicleCount}", vehicles.Count());
+                _logger.LogInformation("All vehicles retrieved with count {VehicleCount}", vehicles.Count());
                 return Ok(vehicles);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 var vehicle = await _vehicleService.CreateVehicleAsync(request);
-                _logger.LogInformation("Vehicle created: {VehicleId}", vehicle.Id);
+                _logger.LogInformation("Vehicle created with id {VehicleId}", vehicle.Id);
                 return CreatedAtAction(nameof(GetVehicle), new { id = vehicle.Id }, vehicle);
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace VehicleRental.API.Controllers
             try
             {
                 await _vehicleService.DeleteVehicleAsync(id);
-                _logger.LogInformation("Vehicle deleted: {VehicleId}", id);
+                _logger.LogInformation("Vehicle deleted with id {VehicleId}", id);
                 return NoContent();
             }
             catch (Exception ex)

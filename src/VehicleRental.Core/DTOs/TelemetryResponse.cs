@@ -7,8 +7,6 @@ namespace VehicleRental.Core.DTOs
     {
         public decimal Value { get; set; }
         public long Timestamp { get; set; }
-        public bool IsValid { get; set; }
-        public string ValidationMessage { get; set; } = string.Empty;
 
         public static TelemetryResponse FromEntity(Telemetry telemetry)
         {
@@ -16,19 +14,17 @@ namespace VehicleRental.Core.DTOs
             {
                 Value = telemetry.Value,
                 Timestamp = ((DateTimeOffset)telemetry.Timestamp).ToUnixTimeSeconds(),
-                IsValid = telemetry.IsValid,
-                ValidationMessage = telemetry.ValidationMessage
             };
         }
     }
 
-    public class TelemetryHandshakeResponse
+    public class TelemetryConfirmationResponse
     {
         public string Message { get; set; } = string.Empty;
 
-        public static TelemetryHandshakeResponse FromEntity(Telemetry telemetry)
+        public static TelemetryConfirmationResponse FromEntity(Telemetry telemetry)
         {
-            return new TelemetryHandshakeResponse
+            return new TelemetryConfirmationResponse
             {
                 Message = telemetry.ValidationMessage
             };

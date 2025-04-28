@@ -25,7 +25,7 @@ namespace VehicleRental.Infrastructure.Services
             _validators = validators ?? throw new ArgumentNullException(nameof(validators));
         }
 
-        public async Task<TelemetryHandshakeResponse> ProcessTelemetryAsync(TelemetryRequest request)
+        public async Task<TelemetryConfirmationResponse> ProcessTelemetryAsync(TelemetryRequest request)
         {
             var telemetryType = await FetchHelpers.GetTelemetryTypeByIdAsync(_context, request.TelemetryTypeId);
             var vehicle = await FetchHelpers.GetVehicleByIdAsync(_context, request.VehicleId);
@@ -53,7 +53,7 @@ namespace VehicleRental.Infrastructure.Services
             await _context.Telemetry.AddAsync(telemetry);
             await _context.SaveChangesAsync();
 
-            return TelemetryHandshakeResponse.FromEntity(telemetry);
+            return TelemetryConfirmationResponse.FromEntity(telemetry);
         }
 
         public async Task<TelemetryResponse> GetCurrentOdometerAsync(int vehicleId)

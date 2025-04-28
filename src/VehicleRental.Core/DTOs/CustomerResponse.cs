@@ -8,7 +8,6 @@ namespace VehicleRental.Core.DTOs
         public string Name { get; set; } = string.Empty;
         public decimal TotalDistanceDriven { get; set; }
         public decimal TotalPrice { get; set; }
-        public int TotalRentals { get; set; }
         public bool IsActive { get; set; }
 
         public static CustomerAllDetailsResponse FromEntity(Customer customer)
@@ -19,7 +18,6 @@ namespace VehicleRental.Core.DTOs
                 Name = customer.Name,
                 TotalDistanceDriven = customer.Rentals.Sum(r => r.TotalDistance),
                 TotalPrice = customer.Rentals.Sum(r => r.TotalCost),
-                TotalRentals = customer.Rentals.Count,
                 IsActive = customer.IsActive
             };
         }
