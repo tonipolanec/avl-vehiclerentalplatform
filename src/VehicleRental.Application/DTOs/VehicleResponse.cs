@@ -1,7 +1,7 @@
 using VehicleRental.Core.Entities;
 using System.Linq;
 
-namespace VehicleRental.Core.DTOs
+namespace VehicleRental.Application.DTOs
 {
     public class VehicleResponse
     {

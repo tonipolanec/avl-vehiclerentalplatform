@@ -1,4 +1,4 @@
-using VehicleRental.Core.DTOs;
+using VehicleRental.Application.DTOs;
 using VehicleRental.Infrastructure.Interfaces;
 using VehicleRental.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

@@ -2,14 +2,14 @@ using System;
 using Xunit;
 using VehicleRental.Core.Entities;
 using VehicleRental.Core.Entities.Enums;
-using VehicleRental.Core.Services;
+using VehicleRental.Application.Services;
 using VehicleRental.Infrastructure.Services;
 using Moq;
 using VehicleRental.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
-using VehicleRental.Core.DTOs;
+using VehicleRental.Application.DTOs;
 using VehicleRental.Infrastructure.Services.Validators;
 
 namespace VehicleRental.UnitTests

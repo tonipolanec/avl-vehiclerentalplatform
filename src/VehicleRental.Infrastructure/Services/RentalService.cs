@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using VehicleRental.Core.DTOs;
+using VehicleRental.Application.DTOs;
+using VehicleRental.Application.Services;
 using VehicleRental.Core.Entities;
 using VehicleRental.Core.Entities.Enums;
-using VehicleRental.Core.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Helpers;
 using VehicleRental.Infrastructure.Interfaces;

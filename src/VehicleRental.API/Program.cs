@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using VehicleRental.Core.Services;
+using VehicleRental.Application.Services;
 using VehicleRental.Infrastructure.Data;
 using VehicleRental.Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -60,11 +60,11 @@ try
         options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     // Register services
-    builder.Services.AddScoped<ICustomerService, CustomerService>();
-    builder.Services.AddScoped<IVehicleService, VehicleService>();
-    builder.Services.AddScoped<IRentalService, RentalService>();
-    builder.Services.AddScoped<IPricingCalculator, PricingCalculator>();
-    builder.Services.AddScoped<ITelemetryService, TelemetryService>();
+    builder.Services.AddScoped<VehicleRental.Application.Services.ICustomerService, CustomerService>();
+    builder.Services.AddScoped<VehicleRental.Application.Services.IVehicleService, VehicleService>();
+    builder.Services.AddScoped<VehicleRental.Application.Services.IRentalService, RentalService>();
+    builder.Services.AddScoped<VehicleRental.Application.Services.IPricingCalculator, PricingCalculator>();
+    builder.Services.AddScoped<VehicleRental.Application.Services.ITelemetryService, TelemetryService>();
     builder.Services.AddScoped<ITelemetryValidator, OdometerValidator>();
     builder.Services.AddScoped<ITelemetryValidator, BatteryValidator>();
     builder.Services.AddScoped<IRentalValidator, RentalValidator>();

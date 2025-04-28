@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleRental.Core\VehicleRental.Core.csproj" />
+    <ProjectReference Include="..\VehicleRental.Application\VehicleRental.Application.csproj" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

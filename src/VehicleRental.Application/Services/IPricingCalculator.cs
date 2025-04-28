@@ -1,6 +1,6 @@
 using VehicleRental.Core.Entities;
 
-namespace VehicleRental.Core.Services
+namespace VehicleRental.Application.Services
 {
     public interface IPricingCalculator
     {

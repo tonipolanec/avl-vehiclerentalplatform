@@ -1872,6 +1872,19 @@
           }
         }
       },
+      "VehicleRental.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "VehicleRental.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VehicleRental.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VehicleRental.Application.dll": {}
+        }
+      },
       "VehicleRental.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5361,6 +5374,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "VehicleRental.Application/1.0.0": {
+      "type": "project",
+      "path": "../VehicleRental.Application/VehicleRental.Application.csproj",
+      "msbuildProject": "../VehicleRental.Application/VehicleRental.Application.csproj"
+    },
     "VehicleRental.Core/1.0.0": {
       "type": "project",
       "path": "../VehicleRental.Core/VehicleRental.Core.csproj",
@@ -5372,6 +5390,7 @@
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
+      "VehicleRental.Application >= 1.0.0",
       "VehicleRental.Core >= 1.0.0"
     ]
   },
@@ -5406,6 +5425,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Programming\\AVL backend task\\avl-vehiclerentalplatform\\src\\VehicleRental.Application\\VehicleRental.Application.csproj": {
+              "projectPath": "D:\\Programming\\AVL backend task\\avl-vehiclerentalplatform\\src\\VehicleRental.Application\\VehicleRental.Application.csproj"
+            },
             "D:\\Programming\\AVL backend task\\avl-vehiclerentalplatform\\src\\VehicleRental.Core\\VehicleRental.Core.csproj": {
               "projectPath": "D:\\Programming\\AVL backend task\\avl-vehiclerentalplatform\\src\\VehicleRental.Core\\VehicleRental.Core.csproj"
             }

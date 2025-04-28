@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace VehicleRental.Core.DTOs
+namespace VehicleRental.Application.DTOs
 {
     public class ErrorResponse
     {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace VehicleRental.Core.DTOs
+namespace VehicleRental.Application.DTOs
 {
     public class TelemetryRequest
     {

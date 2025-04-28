@@ -1,4 +1,4 @@
-using VehicleRental.Core.DTOs;
+using VehicleRental.Application.DTOs;
 using VehicleRental.Infrastructure.Data;
 
 namespace VehicleRental.Infrastructure.Interfaces

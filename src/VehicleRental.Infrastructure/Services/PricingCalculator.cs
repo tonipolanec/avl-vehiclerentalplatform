@@ -1,4 +1,4 @@
-using VehicleRental.Core.Services;
+using VehicleRental.Application.Services;
 
 namespace VehicleRental.Infrastructure.Services
 {

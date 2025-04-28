@@ -1,6 +1,6 @@
 using VehicleRental.Core.Entities;
 
-namespace VehicleRental.Core.DTOs
+namespace VehicleRental.Application.DTOs
 {
     public class CustomerAllDetailsResponse
     {

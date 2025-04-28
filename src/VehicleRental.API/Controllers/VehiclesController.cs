@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using VehicleRental.Core.DTOs;
-using VehicleRental.Core.Services;
+using VehicleRental.Application.DTOs;
+using VehicleRental.Application.Services;
 
 namespace VehicleRental.API.Controllers
 {

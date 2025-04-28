@@ -4,7 +4,7 @@ using CsvHelper.Configuration;
 using System.Globalization;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-using VehicleRental.Core.DTOs;
+using VehicleRental.Application.DTOs;
 
 namespace VehicleRental.TelemetrySimulator;
 

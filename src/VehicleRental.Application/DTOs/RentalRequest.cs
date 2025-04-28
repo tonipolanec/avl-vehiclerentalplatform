@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using VehicleRental.Core.Entities.Enums;
 
-namespace VehicleRental.Core.DTOs
+namespace VehicleRental.Application.DTOs
 {
     public class CreateRentalRequest
     {
