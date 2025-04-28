@@ -6,7 +6,8 @@ namespace VehicleRental.Core.Services
     {
         decimal CalculateRentalPrice(
             decimal totalKilometers,
-            int numberOfDays,
+            DateTime startDate,
+            DateTime endDate,
             decimal pricePerKm,
             decimal pricePerDay,
             decimal? batteryDelta);

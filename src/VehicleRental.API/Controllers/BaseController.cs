@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleRental.Core.DTOs;
 using Microsoft.Extensions.Logging;
+using Npgsql;
+using Microsoft.EntityFrameworkCore;
 
 namespace VehicleRental.API.Controllers
 {
@@ -44,6 +46,27 @@ namespace VehicleRental.API.Controllers
                         "Invalid input provided.",
                         errorCode ?? "INVALID_INPUT",
                         new List<string> { ex.Message }
+                    ));
+
+                case DbUpdateException dbEx when dbEx.InnerException is PostgresException pgEx:
+                    string constraintType = pgEx.SqlState switch
+                    {
+                        "23505" => "Unique constraint violation",
+                        "23503" => "Foreign key violation",
+                        "23502" => "Not null violation",
+                        _ => "Database constraint violation"
+                    };
+
+                    _logger.LogError(ex, "{ConstraintType}: {Message}", constraintType, ex.Message);
+
+                    return BadRequest(new ErrorResponse(
+                        constraintType + ".",
+                        "DATABASE_CONSTRAINT_ERROR",
+                        new List<string>
+                        {
+                            pgEx.Detail ?? ex.Message,
+                            $"Constraint: {pgEx.ConstraintName}"
+                        }
                     ));
 
                 default:

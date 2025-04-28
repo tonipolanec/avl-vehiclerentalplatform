@@ -24,6 +24,6 @@ namespace VehicleRental.Core.Entities
         public required Vehicle Vehicle { get; set; }
 
         public decimal TotalDistance => FinalOdometerReading - InitialOdometerReading ?? 0m;
-        public decimal BatteryDelta => InitialBatteryLevel - FinalBatteryLevel ?? 0m;
+        public decimal BatteryDelta => FinalBatteryLevel - InitialBatteryLevel ?? 0m;
     }
 }

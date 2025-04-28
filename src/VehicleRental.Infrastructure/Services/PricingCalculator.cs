@@ -8,7 +8,8 @@ namespace VehicleRental.Infrastructure.Services
 
         public decimal CalculateRentalPrice(
             decimal totalKilometers,
-            int numberOfDays,
+            DateTime startDate,
+            DateTime endDate,
             decimal pricePerKm,
             decimal pricePerDay,
             decimal? batteryDelta)
@@ -18,12 +19,14 @@ namespace VehicleRental.Infrastructure.Services
             //              max(0, -battery_delta_per_rental) × 0.2€
 
             var distanceCost = totalKilometers * pricePerKm;
+
+            var numberOfDays = (int)Math.Ceiling((endDate - startDate).TotalDays);
             var dailyCost = numberOfDays * pricePerDay;
 
             var batteryCost = 0m;
-            if (batteryDelta.HasValue && batteryDelta.Value < 0)
+            if (batteryDelta.HasValue)
             {
-                batteryCost = Math.Abs(batteryDelta.Value) * BATTERY_CHARGE_COST_MULTIPLIER;
+                batteryCost = Math.Max(0, -batteryDelta.Value) * BATTERY_CHARGE_COST_MULTIPLIER;
             }
 
             return distanceCost + dailyCost + batteryCost;

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using VehicleRental.Core.DTOs;
 using VehicleRental.Core.Services;
+using VehicleRental.API.Authorization;
 
 namespace VehicleRental.API.Controllers
 {
@@ -102,6 +104,22 @@ namespace VehicleRental.API.Controllers
             catch (Exception ex)
             {
                 return HandleError<RentalAllDetailsResponse>(ex, "FinishRental", "RENTAL_FINISH_ERROR");
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Policy = "DeleteRentalPolicy")]
+        public async Task<ActionResult> DeleteRental(int id)
+        {
+            try
+            {
+                await _rentalService.DeleteRentalAsync(id);
+                _logger.LogInformation("Rental deleted with id {RentalId}", id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return HandleError(ex, "DeleteRental", "RENTAL_DELETION_ERROR");
             }
         }
     }

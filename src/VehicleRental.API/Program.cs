@@ -10,6 +10,8 @@ using VehicleRental.Infrastructure.Services.Validators;
 using VehicleRental.Infrastructure.Interfaces;
 using Serilog;
 using Serilog.Events;
+using Microsoft.AspNetCore.Authorization;
+using VehicleRental.API.Authorization;
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()
@@ -66,6 +68,14 @@ try
     builder.Services.AddScoped<ITelemetryValidator, OdometerValidator>();
     builder.Services.AddScoped<ITelemetryValidator, BatteryValidator>();
     builder.Services.AddScoped<IRentalValidator, RentalValidator>();
+
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("DeleteRentalPolicy", policy =>
+            policy.Requirements.Add(new DeleteRentalRequirement()));
+    });
+
+    builder.Services.AddSingleton<IAuthorizationHandler, DeleteRentalAuthorizationHandler>();
 
     var app = builder.Build();
 

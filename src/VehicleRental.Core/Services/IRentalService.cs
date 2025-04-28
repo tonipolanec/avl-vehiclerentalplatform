@@ -11,5 +11,6 @@ namespace VehicleRental.Core.Services
         Task<RentalAllDetailsResponse> UpdateRentalAsync(int id, UpdateRentalDatesRequest request);
         Task<RentalAllDetailsResponse> FinishRentalAsync(int id);
         Task CancelRentalAsync(int id);
+        Task DeleteRentalAsync(int id);
     }
 }

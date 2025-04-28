@@ -135,11 +135,11 @@ namespace VehicleRental.Infrastructure.Services
             rental.InitialBatteryLevel = batteryReadingRentalStart.Value;
             rental.FinalBatteryLevel = batteryReadingRentalEnd.Value;
 
-            var numberOfDays = (int)Math.Ceiling((rental.EndDate - rental.StartDate).TotalDays);
 
             var totalCost = _pricingCalculator.CalculateRentalPrice(
                 totalKilometers: rental.TotalDistance,
-                numberOfDays: numberOfDays,
+                startDate: rental.StartDate,
+                endDate: rental.EndDate,
                 pricePerKm: rental.Vehicle.PricePerKmInEuro,
                 pricePerDay: rental.Vehicle.PricePerDayInEuro,
                 batteryDelta: rental.BatteryDelta
@@ -152,6 +152,13 @@ namespace VehicleRental.Infrastructure.Services
             await _context.SaveChangesAsync();
 
             return await GetRentalByIdAsync(rental.Id);
+        }
+
+        public async Task DeleteRentalAsync(int id)
+        {
+            var rental = await FetchHelpers.GetRentalByIdAsync(_context, id);
+            _context.Rentals.Remove(rental);
+            await _context.SaveChangesAsync();
         }
     }
 }
