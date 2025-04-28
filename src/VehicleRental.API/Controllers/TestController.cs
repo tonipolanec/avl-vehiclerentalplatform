@@ -10,7 +10,7 @@ public class TestController : BaseController
 {
     private readonly VehicleRentalDbContext _context;
 
-    public TestController(VehicleRentalDbContext context, ILogger<TestController> logger) : base(logger)
+    public TestController(VehicleRentalDbContext context, ILogger<TestController> logger, IConfiguration configuration) : base(logger, configuration)
     {
         _context = context;
     }

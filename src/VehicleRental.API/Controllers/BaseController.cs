@@ -9,10 +9,12 @@ namespace VehicleRental.API.Controllers
     public class BaseController : ControllerBase
     {
         protected readonly ILogger<BaseController> _logger;
+        protected readonly bool IncludeErrorDetail;
 
-        protected BaseController(ILogger<BaseController> logger)
+        protected BaseController(ILogger<BaseController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            IncludeErrorDetail = configuration.GetValue<bool>("CustomLogging:IncludeErrorDetailContext");
         }
 
         protected ActionResult<T> HandleError<T>(Exception ex, string context, string errorCode)
@@ -25,7 +27,7 @@ namespace VehicleRental.API.Controllers
             switch (ex)
             {
                 case KeyNotFoundException:
-                    _logger.LogError(ex, "Resource not found: {Message}", ex.Message);
+                    LogError(ex, "Resource not found: {Message}", context, errorCode);
                     return NotFound(new ErrorResponse(
                         "The requested resource was not found.",
                         "RESOURCE_NOT_FOUND",
@@ -33,7 +35,7 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 case InvalidOperationException:
-                    _logger.LogError(ex, "Invalid operation: {Message}", ex.Message);
+                    LogError(ex, "Invalid operation: {Message}", context, errorCode);
                     return BadRequest(new ErrorResponse(
                         ex.Message,
                         errorCode ?? "INVALID_OPERATION",
@@ -41,7 +43,7 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 case ArgumentException:
-                    _logger.LogError(ex, "Invalid input: {Message}", ex.Message);
+                    LogError(ex, "Invalid input: {Message}", context, errorCode);
                     return BadRequest(new ErrorResponse(
                         "Invalid input provided.",
                         errorCode ?? "INVALID_INPUT",
@@ -57,7 +59,7 @@ namespace VehicleRental.API.Controllers
                         _ => "Database constraint violation"
                     };
 
-                    _logger.LogError(ex, "{ConstraintType}: {Message}", constraintType, ex.Message);
+                    LogError(ex, "{ConstraintType}: {Message}", context, errorCode);
 
                     return BadRequest(new ErrorResponse(
                         constraintType + ".",
@@ -70,12 +72,24 @@ namespace VehicleRental.API.Controllers
                     ));
 
                 default:
-                    _logger.LogError(ex, "An unexpected error occurred: {Message}", ex.Message);
+                    LogError(ex, "An unexpected error occurred: {Message}", context, errorCode);
                     return StatusCode(500, new ErrorResponse(
                         "An unexpected error occurred.",
                         "INTERNAL_SERVER_ERROR",
                         new List<string> { "Please try again later or contact support if the problem persists." }
                     ));
+            }
+        }
+
+        private void LogError(Exception ex, string customMessage, string context, string errorCode)
+        {
+            if (IncludeErrorDetail)
+            {
+                _logger.LogError(ex, customMessage, context, ex.Message);
+            }
+            else
+            {
+                _logger.LogError(customMessage, ex.Message);
             }
         }
 

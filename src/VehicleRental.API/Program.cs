@@ -86,7 +86,7 @@ try
         app.UseSwaggerUI();
     }
 
-    app.UseHttpsRedirection();
+    //app.UseHttpsRedirection();
     app.UseAuthorization();
     app.MapControllers();
 
@@ -100,7 +100,7 @@ try
             {
                 var context = services.GetRequiredService<VehicleRentalDbContext>();
                 await DatabaseSeeder.SeedVehiclesAsync(context);
-                await DatabaseSeeder.SeedTelemetryAsync(context);
+                //await DatabaseSeeder.SeedTelemetryAsync(context);
             }
             catch (Exception ex)
             {

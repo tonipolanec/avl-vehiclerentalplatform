@@ -10,7 +10,7 @@ namespace VehicleRental.API.Controllers
     {
         private readonly IVehicleService _vehicleService;
 
-        public VehiclesController(IVehicleService vehicleService, ILogger<VehiclesController> logger) : base(logger)
+        public VehiclesController(IVehicleService vehicleService, ILogger<VehiclesController> logger, IConfiguration configuration) : base(logger, configuration)
         {
             _vehicleService = vehicleService;
         }

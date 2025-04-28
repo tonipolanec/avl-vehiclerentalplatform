@@ -18,7 +18,8 @@ namespace VehicleRental.API.Controllers
         public TelemetryController(
             ITelemetryService telemetryService,
             VehicleRentalDbContext context,
-            ILogger<TelemetryController> logger) : base(logger)
+            ILogger<TelemetryController> logger,
+            IConfiguration configuration) : base(logger, configuration)
         {
             _telemetryService = telemetryService;
             _context = context;

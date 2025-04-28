@@ -12,7 +12,7 @@ namespace VehicleRental.API.Controllers
     {
         private readonly IRentalService _rentalService;
 
-        public RentalsController(IRentalService rentalService, ILogger<RentalsController> logger) : base(logger)
+        public RentalsController(IRentalService rentalService, ILogger<RentalsController> logger, IConfiguration configuration) : base(logger, configuration)
         {
             _rentalService = rentalService;
         }
