@@ -4,7 +4,7 @@
 		"name": "VehicleRental API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40446401",
-		"_collection_link": "https://avl888.postman.co/workspace/VehicleRental~8a75361f-4373-4281-b40e-651c53cd1514/collection/40446401-ee7e61a5-292e-4cce-9fd1-7cee40ab8f85?action=share&source=collection_link&creator=40446401"
+		"_collection_link": "https://avl888.postman.co/workspace/8a75361f-4373-4281-b40e-651c53cd1514/collection/40446401-ee7e61a5-292e-4cce-9fd1-7cee40ab8f85?action=share&source=collection_link&creator=40446401"
 	},
 	"item": [
 		{
@@ -267,8 +267,294 @@
 			]
 		},
 		{
+			"name": "Telemetry",
+			"item": [
+				{
+					"name": "Send telemetry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicleId\": 2,\r\n  \"telemetryTypeId\": 2,\r\n  \"value\": 68.1\r\n  //\"timestamp\": 0      //optional, if none current time is used\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/telemetry",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"telemetry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get odometer reading",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/telemetry/vehicles/:id/odometer",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"telemetry",
+								"vehicles",
+								":id",
+								"odometer"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get battery reading",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/telemetry/vehicles/:id/batterysoc",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"telemetry",
+								"vehicles",
+								":id",
+								"batterysoc"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Rental",
-			"item": []
+			"item": [
+				{
+					"name": "Create rental",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": 0,\r\n  \"vehicleId\": 0,\r\n  \"startDate\": 0,\r\n  \"endDate\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/rentals",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all rentals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/rentals",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get rental",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/rentals/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update rental dates",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startDate\": 0,\r\n  \"endDate\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/rentals/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel rental",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/rentals/:id/cancel",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals",
+								":id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete rental",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/rentals/:id/finish",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals",
+								":id",
+								"finish"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete rental",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Admin-Token",
+								"value": "for_testing_purposes_only////",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/rentals/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"rentals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
