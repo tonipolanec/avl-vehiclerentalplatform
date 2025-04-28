@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "ee7e61a5-292e-4cce-9fd1-7cee40ab8f85",
+		"name": "VehicleRental API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40446401",
+		"_collection_link": "https://avl888.postman.co/workspace/VehicleRental~8a75361f-4373-4281-b40e-651c53cd1514/collection/40446401-ee7e61a5-292e-4cce-9fd1-7cee40ab8f85?action=share&source=collection_link&creator=40446401"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Postmano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/customers",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/customers",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/customers/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Postmano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/customers/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/customers/:id/status",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/customers/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Create vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vin\": \"LSKNFJ836AJR817\",\r\n  \"make\": \"Mazda\",\r\n  \"model\": \"6\",\r\n  \"year\": 2015,\r\n  \"pricePerKmInEuro\": 0.1,\r\n  \"pricePerDayInEuro\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/vehicles",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/vehicles",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/vehicles/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"vehicles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/vehicles/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"vehicles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rental",
+			"item": []
+		}
+	]
+}
