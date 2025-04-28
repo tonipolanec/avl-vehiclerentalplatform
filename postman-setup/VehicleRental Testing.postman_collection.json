@@ -1,0 +1,1333 @@
+{
+	"info": {
+		"_postman_id": "e96cd800-ac88-49ea-b009-fe6ea09ca862",
+		"name": "VehicleRental Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40446401",
+		"_collection_link": "https://avl888.postman.co/workspace/8a75361f-4373-4281-b40e-651c53cd1514/collection/40446401-e96cd800-ac88-49ea-b009-fe6ea09ca862?action=share&source=collection_link&creator=40446401"
+	},
+	"item": [
+		{
+			"name": "Setup rental testing",
+			"item": [
+				{
+					"name": "Creation",
+					"item": [
+						{
+							"name": "Create customer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"let responseData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"customer_one_id\", responseData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Customer one\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/customers",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create customer 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"let responseData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"customer_two_id\", responseData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Customer two\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/customers",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create vehicle",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"let responseData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"rental_vehicle_id\", responseData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"vin\": \"VIN29481769937163\",\r\n  \"make\": \"Delorean\",\r\n  \"model\": \"BTTF\",\r\n  \"year\": 1985,\r\n  \"pricePerKmInEuro\": 0.15,\r\n  \"pricePerDayInEuro\": 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/vehicles",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"vehicles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deletion",
+					"item": [
+						{
+							"name": "Delete customer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{customer_one_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete customer 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{customer_two_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete rental vehicle",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/vehicles/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"vehicles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{rental_vehicle_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Telemetry fill",
+					"item": [
+						{
+							"name": "Odometer",
+							"item": [
+								{
+									"name": "1",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100000,\r\n  \"timestamp\": 515000000 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100030,\r\n  \"timestamp\": 515086400 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100045,\r\n  \"timestamp\": 515172800 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100050,\r\n  \"timestamp\": 515259200 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "5",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100100,\r\n  \"timestamp\": 515345600 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "6",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100112,\r\n  \"timestamp\": 515432000 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "7",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100129,\r\n  \"timestamp\": 515518400 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 1,\r\n  \"value\": 100150,\r\n  \"timestamp\": 515691200 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Battery",
+							"item": [
+								{
+									"name": "1",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 2,\r\n  \"value\": 89,\r\n  \"timestamp\": 515000000 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 2,\r\n  \"value\": 64,\r\n  \"timestamp\": 515259200 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"telemetryTypeId\": 2,\r\n  \"value\": 11,\r\n  \"timestamp\": 515691200 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/telemetry",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"telemetry"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"description": "Filling odometer readings from 515000000 - 515691200 once a day\n\nFilling battery readings thrice from 515000000 - 515691200"
+				}
+			]
+		},
+		{
+			"name": "Runnable test collection",
+			"item": [
+				{
+					"name": "Customer testing",
+					"item": [
+						{
+							"name": "Get all customers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var test_customer_name = pm.collectionVariables.get(\"new_customer_name\");\r",
+											"pm.test(\"No testing customer\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.include(test_customer_name);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"let responseData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"new_customer_id\", responseData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{new_customer_name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/customers",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get new customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"New customer has testing name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.name).to.eql(pm.collectionVariables.get(\"new_customer_name\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"New customer has default values\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.totalDistanceDriven).to.eql(0);\r",
+											"    pm.expect(jsonData.totalPrice).to.eql(0);\r",
+											"    pm.expect(jsonData.isActive).to.eql(true);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{new_customer_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update customer name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Name is updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.name).to.eql(pm.collectionVariables.get(\"updated_name\"));\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{updated_name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{new_customer_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update customer status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status is updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.isActive).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/customers/:id/status",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id",
+										"status"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{new_customer_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{new_customer_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check deletion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/customers/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{new_customer_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Rental testing",
+					"item": [
+						{
+							"name": "Creation",
+							"item": [
+								{
+									"name": "Create customer 1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});\r",
+													"\r",
+													"let responseData = pm.response.json();\r",
+													"pm.collectionVariables.set(\"customer_one_id\", responseData.id);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Customer one\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/customers",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"customers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create customer 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});\r",
+													"\r",
+													"let responseData = pm.response.json();\r",
+													"pm.collectionVariables.set(\"customer_two_id\", responseData.id);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Customer two\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/customers",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"customers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Testing functionalities",
+							"item": [
+								{
+									"name": "Create rental for customer one",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});\r",
+													"\r",
+													"let responseData = pm.response.json();\r",
+													"pm.collectionVariables.set(\"rental_id\", responseData.id);\r",
+													"\r",
+													"pm.test(\"Status is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"Ordered\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"customerId\": {{customer_one_id}},\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"startDate\": 515000001,\r\n  \"endDate\": 515691199 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/rentals",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"rentals"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create overlapping rental for customer two",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Vehicle overlap\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.message).to.eql(\"Vehicle is already rented during the requested period\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"customerId\": {{customer_two_id}},\r\n  \"vehicleId\": {{rental_vehicle_id}},\r\n  \"startDate\": 515000100,\r\n  \"endDate\": 515641199 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{localhost}}/rentals",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"rentals"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Finish rental for customer 1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"Total distance is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    var distanceTraveled = 100150 - 100000;\r",
+													"    pm.expect(jsonData.totalDistance).to.eql(distanceTraveled);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Battery telemetry is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.initialBatteryLevel).to.eql(89);\r",
+													"    pm.expect(jsonData.finalBatteryLevel).to.eql(11);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.status).to.eql(\"Completed\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Total cost is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    // Total Cost = total_kilometers_per_rental × price_per_km_in_euro + \r",
+													"    //              number_of_rental_days × price_per_day_in_euro + \r",
+													"    //              max(0, -battery_delta_per_rental) × 0.2€\r",
+													"    var true_cost = 150 * 0.15 + 8 * 20 + (89-11) * 0.2;\r",
+													"    pm.expect(jsonData.totalCost).to.eql(true_cost);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/rentals/:id/finish",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"rentals",
+												":id",
+												"finish"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{rental_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cleanup",
+							"item": [
+								{
+									"name": "Delete rental",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 204\", function () {\r",
+													"    pm.response.to.have.status(204);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-Admin-Token",
+												"value": "for_testing_purposes_only",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{localhost}}/rentals/:id",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"rentals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{rental_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete customer 1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 204\", function () {\r",
+													"    pm.response.to.have.status(204);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/customers/:id",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{customer_one_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete customer 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 204\", function () {\r",
+													"    pm.response.to.have.status(204);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/customers/:id",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{customer_two_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "new_customer_name",
+			"value": "Postmano Testing No One Should Have This Name",
+			"type": "string"
+		},
+		{
+			"key": "new_customer_id",
+			"value": ""
+		},
+		{
+			"key": "updated_name",
+			"value": "Update Name Testing",
+			"type": "string"
+		},
+		{
+			"key": "customer_one_id",
+			"value": ""
+		},
+		{
+			"key": "customer_two_id",
+			"value": ""
+		},
+		{
+			"key": "rental_vehicle_id",
+			"value": ""
+		},
+		{
+			"key": "rental_id",
+			"value": ""
+		}
+	]
+}
